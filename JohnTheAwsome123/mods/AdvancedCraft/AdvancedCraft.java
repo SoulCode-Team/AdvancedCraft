@@ -23,7 +23,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.*;
 
-@Mod(modid="AdvancedCraft", name="AdvancedCraft", version="0.0.1")
+@Mod(name = "AdvancedCraft", version="0.0.1", useMetadata = false, modid = "AdvancedCraft", acceptedMinecraftVersions = "[1.6,1.7)", dependencies = "required-after:Forge@[9.10.0.800,)")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class AdvancedCraft {
         
@@ -75,6 +75,12 @@ public class AdvancedCraft {
         
         public static Item netherStarOmniTool;
         public static int netherStarOmniToolID;
+        
+        public static Item netherStarBow;
+        public static int netherStarBowID;
+        
+        public static Item netherStarQuiver;
+        public static int netherStarQuiverID;
         
         
         
@@ -177,6 +183,8 @@ public class AdvancedCraft {
                 netherStarAxeID = config.getItem("Nether Star Axe", 2016).getInt();
                 netherStarHoeID = config.getItem("Nether Star Hoe", 2017).getInt();
                 netherStarOmniToolID = config.getItem("Nether Star Omni Tool", 2018).getInt();
+                netherStarBowID = config.getItem("Nether Star Bow", 2019).getInt();
+                netherStarQuiverID = config.getItem("Nether Star Quiver", 2020).getInt();
                 
                 
                 
@@ -184,6 +192,8 @@ public class AdvancedCraft {
                 netherStarBlockID = config.getBlock("Nether Star Block", 210).getInt();
                 netherStarOreID = config.getBlock("Nether Star Ore", 211).getInt();
                 advancedFurnaceID = config.getBlock("Advanced Furnace", 212).getInt();
+                glowstoneLampIdleID = config.getBlock("Glowstone Lamp Off", 213).getInt();
+                glowstoneLampActiveID = config.getBlock("Glowstone Lamp On", 214).getInt();
                 
                 
                 
@@ -223,14 +233,15 @@ public class AdvancedCraft {
                  netherStarAxe = new netherStarAxe(netherStarAxeID, netherStarTool);
                  netherStarHoe = new netherStarHoe(netherStarHoeID, netherStarTool);
                  netherStarOmniTool = new netherStarOmniTool(netherStarOmniToolID, netherStarTool);
-                 
+                 netherStarBow = new netherStarBow(netherStarBowID);
+                 netherStarQuiver = new netherStarQuiver(netherStarQuiverID);
                  
                  
                  //Set up Blocks//
                  netherStarBlock = new netherStarBlock(netherStarBlockID, Material.iron);
                  netherStarOre = new netherStarOre(netherStarOreID, Material.rock);
-                 glowstoneLampIdle = (new GlowstoneLamp(123, false));
-                 glowstoneLampActive = (new GlowstoneLamp(124, true));
+                 glowstoneLampIdle = (new GlowstoneLamp(glowstoneLampIdleID, false));
+                 glowstoneLampActive = (new GlowstoneLamp(glowstoneLampActiveID, true));
 //                 advancedFurnace = new advancedFurnace(advancedFurnaceID, false);
                  
                  
@@ -312,6 +323,12 @@ public class AdvancedCraft {
                 GameRegistry.registerItem(netherStarOmniTool, "netherStarOmniTool");
                 LanguageRegistry.addName(netherStarOmniTool, "Nether Star Omni Tool");
                 
+                GameRegistry.registerItem(netherStarBow, "netherStarBow");
+                LanguageRegistry.addName(netherStarBow, "Nether Star Bow");
+                
+                GameRegistry.registerItem(netherStarQuiver, "netherStarQuiver");
+                LanguageRegistry.addName(netherStarQuiver, "Nether Star Quiver");
+                
                 
                 
                 //Universal Ingredients//
@@ -389,6 +406,7 @@ public class AdvancedCraft {
                 
                 //Smelting//
                 GameRegistry.addSmelting(AdvancedCraft.sugarCookieDough.itemID, new ItemStack(AdvancedCraft.sugarCookie), 1.0f);
+                GameRegistry.addSmelting(AdvancedCraft.cookieDough.itemID, new ItemStack(Item.cookie), 1.0f);
                 
                 
                 

@@ -42,7 +42,7 @@ public class GlowstoneLamp extends Block
             }
             else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
-                par1World.setBlock(par2, par3, par4, Block.redstoneLampActive.blockID, 0, 2);
+                par1World.setBlock(par2, par3, par4, AdvancedCraft.glowstoneLampActive.blockID, 0, 2);
             }
         }
     }
@@ -61,7 +61,7 @@ public class GlowstoneLamp extends Block
             }
             else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
-                par1World.setBlock(par2, par3, par4, Block.redstoneLampActive.blockID, 0, 2);
+                par1World.setBlock(par2, par3, par4, AdvancedCraft.glowstoneLampActive.blockID, 0, 2);
             }
         }
     }
@@ -73,7 +73,7 @@ public class GlowstoneLamp extends Block
     {
         if (!par1World.isRemote && this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
         {
-            par1World.setBlock(par2, par3, par4, Block.redstoneLampIdle.blockID, 0, 2);
+            par1World.setBlock(par2, par3, par4, AdvancedCraft.glowstoneLampIdle.blockID, 0, 2);
         }
     }
 
@@ -82,7 +82,7 @@ public class GlowstoneLamp extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return Block.redstoneLampIdle.blockID;
+        return AdvancedCraft.glowstoneLampIdle.blockID;
     }
 
     @SideOnly(Side.CLIENT)
@@ -92,6 +92,6 @@ public class GlowstoneLamp extends Block
      */
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return Block.redstoneLampIdle.blockID;
+        return AdvancedCraft.glowstoneLampIdle.blockID;
     }
 }

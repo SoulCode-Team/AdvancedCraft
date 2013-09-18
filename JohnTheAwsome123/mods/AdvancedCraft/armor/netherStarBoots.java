@@ -22,10 +22,10 @@ public class netherStarBoots extends ItemArmor
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("ExtraCraft:netherStar_Boots");
+        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:netherStar_Boots");
     }
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer){
-    return "ExtraCraft:textures/models/armor/netherStar_layer_1.png";
+    return "AdvancedCraft:textures/models/armor/netherStar_layer_1.png";
     }
 
 }

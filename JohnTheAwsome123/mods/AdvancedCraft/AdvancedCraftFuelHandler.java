@@ -12,8 +12,10 @@ public class AdvancedCraftFuelHandler implements IFuelHandler
     {
         int fuelID = fuel.itemID;
         if(fuelID == AdvancedCraft.netherStarShard.itemID){
-            return 1600;
-        }else{
+            return 1600;}
+        else if(fuelID == Item.fireballCharge.itemID){
+            return 1600;}
+        else{
             return 0;
         }
     }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Minecraft"/>
+	<classpathentry kind="lib" path="C:/Users/elhollowell/Minecraft mod creator pack/forge/mcp/jars/libraries/com/google/guava/guava/14.0/guava-14.0.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
