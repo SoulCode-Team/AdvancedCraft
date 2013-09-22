@@ -14,6 +14,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -27,6 +28,8 @@ public class netherStarBow extends Item
 //    public static final String[] bowPullIconNameArray = new String[] {"pulling_0", "pulling_1", "pulling_2"};
 //    @SideOnly(Side.CLIENT)
 //    private Icon[] iconArray;
+    public boolean hasFired;
+    
 
     public netherStarBow(int par1)
     {
@@ -37,6 +40,26 @@ public class netherStarBow extends Item
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
 
+    public boolean getHasFired(){
+        return hasFired;
+    }
+    public void setHasFired(boolean par1boolean){
+        hasFired = par1boolean;
+    }
+    private int getInventorySlotContainItem(int par1, EntityPlayer par2EntityPlayer)
+    {
+        for (int j = 0; j < par2EntityPlayer.inventory.mainInventory.length; ++j)
+        {
+            if (par2EntityPlayer.inventory.mainInventory[j] != null && par2EntityPlayer.inventory.mainInventory[j].itemID == par1)
+            {
+                return j;
+            }
+        }
+
+        return -1;
+    }
+    
+    
     /**
      * called when the player releases the use item button. Args: itemstack, world, entityplayer, itemInUseCount
      */
@@ -52,7 +75,7 @@ public class netherStarBow extends Item
         }
         j = event.charge;
 
-        boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
+        boolean flag = par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.hasItem(AdvancedCraft.netherStarQuiver.itemID) || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
         if (flag || par3EntityPlayer.inventory.hasItem(Item.arrow.itemID))
         {
@@ -113,6 +136,7 @@ public class netherStarBow extends Item
             if (!par2World.isRemote)
             {
                 par2World.spawnEntityInWorld(entityarrow);
+                
             }
         }
     }
@@ -190,6 +214,6 @@ public class netherStarBow extends Item
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
     {
-    list.add("point and shoot");
+    list.add("Point and shoot");
     }
 }

@@ -1,5 +1,6 @@
 package JohnTheAwsome123.mods.AdvancedCraft.tileentity;
 
+import JohnTheAwsome123.mods.AdvancedCraft.block.advancedFurnace;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -39,6 +40,8 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
      * The number of ticks that a fresh copy of the currently-burning item would keep the furnace burning for
      */
     public int currentItemBurnTime;
+    
+    public int furnaceFuelPoints;
 
     /** The number of ticks that the current item has been cooking for */
     public int furnaceCookTime;
@@ -130,7 +133,7 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
      */
     public String getInvName()
     {
-        return this.isInvNameLocalized() ? this.field_94130_e : "container.furnace";
+        return this.isInvNameLocalized() ? this.field_94130_e : "container.advancedFurnace";
     }
 
     /**
@@ -173,6 +176,7 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
         this.furnaceBurnTime = par1NBTTagCompound.getShort("BurnTime");
         this.furnaceCookTime = par1NBTTagCompound.getShort("CookTime");
         this.currentItemBurnTime = getItemBurnTime(this.furnaceItemStacks[1]);
+        this.furnaceFuelPoints = par1NBTTagCompound.getShort("fuelPoints");
 
         if (par1NBTTagCompound.hasKey("CustomName"))
         {
@@ -188,6 +192,7 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
         super.writeToNBT(par1NBTTagCompound);
         par1NBTTagCompound.setShort("BurnTime", (short)this.furnaceBurnTime);
         par1NBTTagCompound.setShort("CookTime", (short)this.furnaceCookTime);
+        par1NBTTagCompound.setShort("fuelPoints", (short)this.furnaceFuelPoints);
         NBTTagList nbttaglist = new NBTTagList();
 
         for (int i = 0; i < this.furnaceItemStacks.length; ++i)
@@ -308,7 +313,7 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
             if (flag != this.furnaceBurnTime > 0)
             {
                 flag1 = true;
-                BlockFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+                advancedFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
 
@@ -453,17 +458,17 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
      * Returns true if automation can insert the given item in the given slot from the given side. Args: Slot, item,
      * side
      */
-    public boolean canInsertItem(int par1, ItemStack par2ItemStack, int par3)
+    public boolean canInsertItem(int slot, ItemStack par2ItemStack, int side)
     {
-        return this.isItemValidForSlot(par1, par2ItemStack);
+        return this.isItemValidForSlot(slot, par2ItemStack);
     }
 
     /**
      * Returns true if automation can extract the given item in the given slot from the given side. Args: Slot, item,
      * side
      */
-    public boolean canExtractItem(int par1, ItemStack par2ItemStack, int par3)
+    public boolean canExtractItem(int slot, ItemStack par2ItemStack, int side)
     {
-        return par3 != 0 || par1 != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
+        return side != 0 || slot != 1 || par2ItemStack.itemID == Item.bucketEmpty.itemID;
     }
 }

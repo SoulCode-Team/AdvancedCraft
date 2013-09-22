@@ -121,9 +121,9 @@ public class advancedFurnace extends BlockContainer
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("furnace_side");
-        this.furnaceIconFront = par1IconRegister.registerIcon(this.isActive ? "furnace_front_on" : "furnace_front_off");
-        this.furnaceIconTop = par1IconRegister.registerIcon("furnace_top");
+        this.blockIcon = par1IconRegister.registerIcon("advancedFurnace_side");
+        this.furnaceIconFront = par1IconRegister.registerIcon(this.isActive ? "advancedFurnace_front_on" : "advancedFurnace_front_off");
+        this.furnaceIconTop = par1IconRegister.registerIcon("advancedFurnace_top");
     }
 
     /**
@@ -137,11 +137,11 @@ public class advancedFurnace extends BlockContainer
         }
         else
         {
-            TileEntityAdvancedFurnace tileentityadvancedfurnace = (TileEntityAdvancedFurnace)par1World.getBlockTileEntity(par2, par3, par4);
+            TileEntityFurnace tileentityadvancedfurnace = (TileEntityFurnace)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (tileentityadvancedfurnace != null)
             {
-//                par5EntityPlayer.displayGUIFurnace(tileentityadvancedfurnace);
+                par5EntityPlayer.displayGUIFurnace(tileentityadvancedfurnace);
             }
 
             return true;
@@ -159,10 +159,12 @@ public class advancedFurnace extends BlockContainer
 
         if (par0)
         {
+//            par1World.setBlock(par2, par3, par4, AdvancedCraft.advancedFurnaceBurning.blockID);
             par1World.setBlock(par2, par3, par4, Block.furnaceBurning.blockID);
         }
         else
         {
+//            par1World.setBlock(par2, par3, par4, AdvancedCraft.advancedFurnaceIdle.blockID);
             par1World.setBlock(par2, par3, par4, Block.furnaceIdle.blockID);
         }
 

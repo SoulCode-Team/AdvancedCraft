@@ -94,6 +94,9 @@ public class AdvancedCraft {
         public static Block advancedFurnace;
         public static int advancedFurnaceID;
         
+        public static Block mobCurtain;
+        public static int mobCurtainID;
+        
         public static Block glowstoneLampActive;
         public static int glowstoneLampActiveID;
         
@@ -194,6 +197,7 @@ public class AdvancedCraft {
                 advancedFurnaceID = config.getBlock("Advanced Furnace", 212).getInt();
                 glowstoneLampIdleID = config.getBlock("Glowstone Lamp Off", 213).getInt();
                 glowstoneLampActiveID = config.getBlock("Glowstone Lamp On", 214).getInt();
+                mobCurtainID = config.getBlock("Mob Curtain", 215).getInt();
                 
                 
                 
@@ -239,9 +243,10 @@ public class AdvancedCraft {
                  
                  //Set up Blocks//
                  netherStarBlock = new netherStarBlock(netherStarBlockID, Material.iron);
+                 mobCurtain = new mobCurtain(mobCurtainID, Material.grass);
                  netherStarOre = new netherStarOre(netherStarOreID, Material.rock);
-                 glowstoneLampIdle = (new GlowstoneLamp(glowstoneLampIdleID, false));
-                 glowstoneLampActive = (new GlowstoneLamp(glowstoneLampActiveID, true));
+//                 glowstoneLampIdle = (new GlowstoneLamp(glowstoneLampIdleID, false));
+//                 glowstoneLampActive = (new GlowstoneLamp(glowstoneLampActiveID, true));
 //                 advancedFurnace = new advancedFurnace(advancedFurnaceID, false);
                  
                  
@@ -260,6 +265,9 @@ public class AdvancedCraft {
                 GameRegistry.registerBlock(netherStarOre, "netherStarOre");
                 LanguageRegistry.addName(netherStarOre, "Nether Star Ore");
                 MinecraftForge.setBlockHarvestLevel(netherStarOre, "pickaxe", 3);
+                
+                GameRegistry.registerBlock(mobCurtain, "mobCurtain");
+                LanguageRegistry.addName(mobCurtain, "Mob Curtain");
                 
               
                  
@@ -363,6 +371,7 @@ public class AdvancedCraft {
                         's', new ItemStack(AdvancedCraft.netherStarShard));
                 GameRegistry.addRecipe(new ItemStack(Item.netherStar), "nnn", "nnn", "nnn",
                         'n', new ItemStack(AdvancedCraft.netherStarNugget));
+                GameRegistry.addShapelessRecipe(new ItemStack(Item.glowstone, 4), new ItemStack(Block.glowStone));
                 GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.netherStarShard, 9), new ItemStack(AdvancedCraft.netherStarNugget));
                 GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.netherStarNugget, 9), new ItemStack(Item.netherStar));
                 GameRegistry.addShapelessRecipe(new ItemStack(Item.netherStar, 9), new ItemStack(AdvancedCraft.netherStarBlock));
