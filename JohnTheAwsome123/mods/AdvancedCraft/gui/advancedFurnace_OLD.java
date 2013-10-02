@@ -12,14 +12,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.tileentity.TileEntityFurnace;
 
-public class advancedFurnace extends Container
+public class advancedFurnace_OLD extends Container
 {
     private TileEntityFurnace furnace;
     private int lastCookTime;
     private int lastBurnTime;
     private int lastItemBurnTime;
 
-    public advancedFurnace(InventoryPlayer par1InventoryPlayer, TileEntityFurnace par2TileEntityFurnace)
+    public advancedFurnace_OLD(InventoryPlayer par1InventoryPlayer, TileEntityFurnace par2TileEntityFurnace)
     {
         this.furnace = par2TileEntityFurnace;
         this.addSlotToContainer(new Slot(par2TileEntityFurnace, 0, 56, 17));

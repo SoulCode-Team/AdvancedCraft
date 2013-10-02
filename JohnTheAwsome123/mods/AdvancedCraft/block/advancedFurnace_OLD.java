@@ -1,7 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.block;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.tileentity.TileEntityAdvancedFurnace;
+import JohnTheAwsome123.mods.AdvancedCraft.tileentity.TileEntityAdvancedFurnace_OLD;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
@@ -23,7 +23,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class advancedFurnace extends BlockContainer
+public class advancedFurnace_OLD extends BlockContainer
 {
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
@@ -43,7 +43,7 @@ public class advancedFurnace extends BlockContainer
     @SideOnly(Side.CLIENT)
     private Icon furnaceIconFront;
 
-    public advancedFurnace(int par1, boolean par2)
+    public advancedFurnace_OLD(int par1, boolean par2)
     {
         super(par1, Material.rock);
         this.isActive = par2;
@@ -54,7 +54,7 @@ public class advancedFurnace extends BlockContainer
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return AdvancedCraft.advancedFurnace.blockID;
+        return AdvancedCraft.advancedFurnaceIdle.blockID;
     }
 
     /**
@@ -159,13 +159,11 @@ public class advancedFurnace extends BlockContainer
 
         if (par0)
         {
-//            par1World.setBlock(par2, par3, par4, AdvancedCraft.advancedFurnaceBurning.blockID);
-            par1World.setBlock(par2, par3, par4, Block.furnaceBurning.blockID);
+            par1World.setBlock(par2, par3, par4, AdvancedCraft.advancedFurnaceActive.blockID);
         }
         else
         {
-//            par1World.setBlock(par2, par3, par4, AdvancedCraft.advancedFurnaceIdle.blockID);
-            par1World.setBlock(par2, par3, par4, Block.furnaceIdle.blockID);
+            par1World.setBlock(par2, par3, par4, AdvancedCraft.advancedFurnaceIdle.blockID);
         }
 
         keepFurnaceInventory = false;

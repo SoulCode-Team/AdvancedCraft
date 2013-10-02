@@ -1,6 +1,6 @@
 package JohnTheAwsome123.mods.AdvancedCraft.tileentity;
 
-import JohnTheAwsome123.mods.AdvancedCraft.block.advancedFurnace;
+import JohnTheAwsome123.mods.AdvancedCraft.block.advancedFurnace_OLD;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -22,7 +22,7 @@ import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.ForgeDummyContainer;
 import net.minecraft.tileentity.*;
 
-public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInventory
+public class TileEntityAdvancedFurnace_OLD extends TileEntity implements ISidedInventory
 {
     private static final int[] slots_top = new int[] {0};
     private static final int[] slots_bottom = new int[] {2, 1};
@@ -313,7 +313,7 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
             if (flag != this.furnaceBurnTime > 0)
             {
                 flag1 = true;
-                advancedFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+//                advancedFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
 
@@ -399,7 +399,7 @@ public class TileEntityAdvancedFurnace extends TileEntity implements ISidedInven
                     return 300;
                 }
 
-                if (block == Block.field_111034_cE)
+//                if (block == Block.field_111034_cE)
                 {
                     return 16000;
                 }
