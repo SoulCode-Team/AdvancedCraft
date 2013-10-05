@@ -82,6 +82,12 @@ public class AdvancedCraft {
         public static Item netherStarQuiver;
         public static int netherStarQuiverID;
         
+        public static Item advancedClock;
+        public static int advancedClockID;
+        
+        public static Item weathermansCompass;
+        public static int weathermansCompassID;
+        
         
         
         //Define Blocks//
@@ -186,7 +192,7 @@ public class AdvancedCraft {
                 sugarCookieDoughID = config.getItem("Sugar Cookie Dough", 214).getInt();
                 cookieDoughID = config.getItem("Cookie Dough", 215).getInt();
                 
-                disableAlternateCookie= config.get(config.CATEGORY_GENERAL, "disable alternate cookie recipes", false).getBoolean(false);
+                disableAlternateCookie = config.get(config.CATEGORY_GENERAL, "disable alternate cookie recipes", false).getBoolean(false);
                 
                 //Configs for Tools//
                 netherStarSwordID = config.getItem("Nether Star Sword", 2013).getInt();
@@ -197,6 +203,8 @@ public class AdvancedCraft {
                 netherStarOmniToolID = config.getItem("Nether Star Omni Tool", 2018).getInt();
                 netherStarBowID = config.getItem("Nether Star Bow", 2019).getInt();
                 netherStarQuiverID = config.getItem("Nether Star Quiver", 2020).getInt();
+                advancedClockID = config.getItem("Advanced Clock", 2021).getInt();
+                weathermansCompassID = config.getItem("Weatherman's Clock", 2022).getInt();
                 
                 
                 
@@ -251,6 +259,8 @@ public class AdvancedCraft {
                  netherStarOmniTool = new netherStarOmniTool(netherStarOmniToolID, netherStarTool);
                  netherStarBow = new netherStarBow(netherStarBowID);
                  netherStarQuiver = new netherStarQuiver(netherStarQuiverID);
+                 advancedClock = new advancedClock(advancedClockID);
+                 weathermansCompass = new weathermansCompass(weathermansCompassID);
                  
                  
                  //Set up Blocks//
@@ -288,6 +298,9 @@ public class AdvancedCraft {
                 
                 GameRegistry.registerBlock(nerdPole, "nerdPole");
                 LanguageRegistry.addName(nerdPole, "Nerd Pole");
+                
+                GameRegistry.registerBlock(cobblestoneGenerator, "cobblestoneGenerator");
+                LanguageRegistry.addName(cobblestoneGenerator, "Cobblestone Generator");
                 
 //                GameRegistry.registerBlock(advancedFurnaceIdle, "advancedFurnaceIdle");
 //                LanguageRegistry.addName(advancedFurnaceIdle, "Advanced Furnace");
@@ -361,6 +374,12 @@ public class AdvancedCraft {
                 GameRegistry.registerItem(netherStarQuiver, "netherStarQuiver");
                 LanguageRegistry.addName(netherStarQuiver, "Nether Star Quiver");
                 
+                GameRegistry.registerItem(advancedClock, "advancedClock");
+                LanguageRegistry.addName(advancedClock, "Advanced Clock");
+                
+                GameRegistry.registerItem(weathermansCompass, "weathermansCompass");
+                LanguageRegistry.addName(weathermansCompass, "Weatherman's Compass");
+                
                 
                 
                 //Universal Ingredients//
@@ -397,6 +416,7 @@ public class AdvancedCraft {
                         'n', new ItemStack(AdvancedCraft.netherStarNugget));
                 GameRegistry.addShapelessRecipe(new ItemStack(Item.glowstone, 4), new ItemStack(Block.glowStone));
                 GameRegistry.addShapelessRecipe(new ItemStack(Item.snowball, 4), new ItemStack(Block.snow));
+                GameRegistry.addShapelessRecipe(new ItemStack(Item.clay, 4), new ItemStack(Block.blockClay));
                 GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.netherStarShard, 9), new ItemStack(AdvancedCraft.netherStarNugget));
                 GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.netherStarNugget, 9), new ItemStack(Item.netherStar));
                 GameRegistry.addShapelessRecipe(new ItemStack(Item.netherStar, 9), new ItemStack(AdvancedCraft.netherStarBlock));
@@ -404,10 +424,10 @@ public class AdvancedCraft {
                 
                 
                 //Recipes for Food//
-                GameRegistry.addRecipe(new ItemStack(AdvancedCraft.sugarCookieDough), "wsw",
+                GameRegistry.addRecipe(new ItemStack(AdvancedCraft.sugarCookieDough, 8), "wsw",
                         'w', new ItemStack(Item.wheat), 's', new ItemStack(Item.sugar));
                 if (!disableAlternateCookie){
-                    GameRegistry.addRecipe(new ItemStack(AdvancedCraft.cookieDough), "wcw",
+                    GameRegistry.addRecipe(new ItemStack(AdvancedCraft.cookieDough, 8), "wcw",
                             'c', new ItemStack(Item.dyePowder, 1, 3), 'w', new ItemStack(Item.wheat));}
                 
                 

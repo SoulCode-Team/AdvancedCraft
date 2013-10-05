@@ -1,4 +1,4 @@
-package JohnTheAwsome123.mods.AdvancedCraft.gui;
+package JohnTheAwsome123.mods.AdvancedCraft.client.gui;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

@@ -56,12 +56,12 @@ public class nerdPole extends Block
             }
         }
     }*/
-    
+    @Override
     public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
     {
-        return par1World.isAirBlock(par2, par3 , par4);
+        return !par1World.isAirBlock(par2, par3 -1 , par4);
     }
-    
+    @Override
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         if (!this.canBlockStay( par1World,  par2,  par3,  par4)){

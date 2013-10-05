@@ -1,7 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.block;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.tileentity.TileEntityAdvancedFurnace_OLD;
+import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityAdvancedFurnace_OLD;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;

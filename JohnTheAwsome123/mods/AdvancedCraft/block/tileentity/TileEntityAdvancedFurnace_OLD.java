@@ -1,4 +1,4 @@
-package JohnTheAwsome123.mods.AdvancedCraft.tileentity;
+package JohnTheAwsome123.mods.AdvancedCraft.block.tileentity;
 
 import JohnTheAwsome123.mods.AdvancedCraft.block.advancedFurnace_OLD;
 import cpw.mods.fml.common.registry.GameRegistry;
