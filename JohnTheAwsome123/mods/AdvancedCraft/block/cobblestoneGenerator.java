@@ -19,7 +19,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityHopper;
 import net.minecraft.world.World;
 
-public class cobblestoneGenerator extends Block
+public class cobblestoneGenerator extends BlockContainer
 {
 
     public cobblestoneGenerator(int par1, Material par2Material)
