@@ -16,9 +16,8 @@ public class netherStarHelmet extends ItemArmor
     public netherStarHelmet(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
-        setUnlocalizedName("netherStarHelmet");
-        setCreativeTab(CreativeTabs.tabCombat);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarHelmet");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){

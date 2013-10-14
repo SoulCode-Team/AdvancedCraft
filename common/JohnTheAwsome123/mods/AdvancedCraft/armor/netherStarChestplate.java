@@ -16,9 +16,8 @@ public class netherStarChestplate extends ItemArmor
     public netherStarChestplate(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
-        setUnlocalizedName("netherStarChestplate");
-        setCreativeTab(CreativeTabs.tabCombat);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarChestplate");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){

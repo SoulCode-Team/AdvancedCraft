@@ -17,8 +17,8 @@ public class netherStarOmniTool extends ItemTool
     public netherStarOmniTool(int par1, EnumToolMaterial par3EnumToolMaterial)
     {
         super(par1, 3.0F, par3EnumToolMaterial, blocksEffectiveAgainst);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        setUnlocalizedName("netherStarOmniTool");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarOmniTool");
     }
     public boolean canHarvestBlock(Block par1Block)
     {

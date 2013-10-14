@@ -14,8 +14,8 @@ public class netherStarShovel extends ItemSpade
     public netherStarShovel(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, par2EnumToolMaterial);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        setUnlocalizedName("netherStarShovel");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarShovel");
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){

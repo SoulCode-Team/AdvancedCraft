@@ -15,6 +15,8 @@ public class AdvancedCraftFuelHandler implements IFuelHandler
             return 1600;}
         else if(fuelID == Item.fireballCharge.itemID){
             return 1600;}
+        else if(fuelID == Item.rottenFlesh.itemID){
+            return 25;}
         else{
             return 0;
         }

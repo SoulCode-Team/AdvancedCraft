@@ -16,9 +16,8 @@ public class netherStarLeggings extends ItemArmor
     public netherStarLeggings(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
-        setUnlocalizedName("netherStarLeggings");
-        setCreativeTab(CreativeTabs.tabCombat);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarLeggings");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){

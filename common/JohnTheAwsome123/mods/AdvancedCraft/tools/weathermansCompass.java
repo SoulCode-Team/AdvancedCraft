@@ -44,13 +44,13 @@ public class weathermansCompass extends Item
         this.setMaxDamage(0);
     }
     
-//    public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
-//    {
-//        par3List.add(new ItemStack(par1, 1, 0));
-//        par3List.add(new ItemStack(par1, 1, 1));
-//        par3List.add(new ItemStack(par1, 1, 2));
-//        par3List.add(new ItemStack(par1, 1, 3));
-//    }
+/*    public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    {
+        par3List.add(new ItemStack(par1, 1, 0));
+        par3List.add(new ItemStack(par1, 1, 1));
+        par3List.add(new ItemStack(par1, 1, 2));
+        par3List.add(new ItemStack(par1, 1, 3));
+    }*/
     
 //    @Override
 //    public String getUnlocalizedName(ItemStack par1ItemStack)
@@ -64,11 +64,11 @@ public class weathermansCompass extends Item
 //        }
 //    }
     
-    @Override
-    public EnumAction getItemUseAction(ItemStack par1ItemStack)
-    {
-        return EnumAction.bow;
-    }
+//    @Override
+//    public EnumAction getItemUseAction(ItemStack par1ItemStack)
+//    {
+//        return EnumAction.bow;
+//    }
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
         if (par3EntityPlayer.isSneaking()){

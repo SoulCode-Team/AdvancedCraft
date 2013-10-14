@@ -14,8 +14,8 @@ public class netherStarHoe extends ItemHoe
     public netherStarHoe(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, par2EnumToolMaterial);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        setUnlocalizedName("netherStarHoe");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarHoe");
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){

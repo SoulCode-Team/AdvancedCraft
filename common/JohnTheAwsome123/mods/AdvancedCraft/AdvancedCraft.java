@@ -57,7 +57,7 @@ public class AdvancedCraft {
         //Define Tool Material
         public static EnumToolMaterial netherStarTool = EnumHelper.addToolMaterial("netherStar", 4, 1024, 10.0F, 4.0F, 30);
         
-        //Define Tools//
+        //Define Tools//  
         public static Item netherStarPickaxe;
         public static int netherStarPickaxeID;
         
@@ -81,6 +81,18 @@ public class AdvancedCraft {
         
         public static Item netherStarQuiver;
         public static int netherStarQuiverID;
+        
+        public static Item suitOfArmor_NetherStar;
+        public static int suitOfArmor_NetherStarID;
+        
+        public static Item suitOfArmor_Diamond;
+        public static int suitOfArmor_DiamondID;
+        
+        public static Item suitOfArmor_Iron;
+        public static int suitOfArmor_IronID;
+        
+        public static Item suitOfArmor_Gold;
+        public static int suitOfArmor_GoldID;
         
         public static Item advancedClock;
         public static int advancedClockID;
@@ -141,6 +153,9 @@ public class AdvancedCraft {
         
         //Define Food Crafting Disabling//
         public static boolean disableAlternateCookie;
+        
+        //Define Fuels Disabling//
+        public static boolean disableFuels;
         
         //Define Armor Disabling//
         public static boolean disableNetherStarHelmet;
@@ -206,6 +221,12 @@ public class AdvancedCraft {
                 advancedClockID = config.getItem("Advanced Clock", 2021).getInt();
                 weathermansCompassID = config.getItem("Weatherman's Clock", 2022).getInt();
                 
+                //Configs for suits of armor//
+                suitOfArmor_NetherStarID = config.getItem("Suit Of Armor - Nether Star", 2023).getInt();
+                suitOfArmor_DiamondID = config.getItem("Suit Of Armor - Diamond", 2024).getInt();
+                suitOfArmor_IronID = config.getItem("Suit Of Armor - Iron", 2025).getInt();
+                suitOfArmor_GoldID = config.getItem("Suit Of Armor - Gold", 2026).getInt();
+                
                 
                 
                 //Configs for Blocks//
@@ -218,6 +239,10 @@ public class AdvancedCraft {
                 mobCurtainID = config.getBlock("Mob Curtain", 216).getInt();
                 cobblestoneGeneratorID = config.getBlock("Cobblestone Generator", 217).getInt();
                 nerdPoleID = config.getBlock("Nerd Pole", 218).getInt();
+                
+                
+                //Configs for fuels//
+                disableFuels = config.get(config.CATEGORY_GENERAL, "disable alternate smelting fuels", false).getBoolean(false);
                 
                 
                 
@@ -261,6 +286,12 @@ public class AdvancedCraft {
                  netherStarQuiver = new netherStarQuiver(netherStarQuiverID);
                  advancedClock = new advancedClock(advancedClockID);
                  weathermansCompass = new weathermansCompass(weathermansCompassID);
+                 
+                 //Set Up Suit Of Armor//
+                 suitOfArmor_NetherStar = new suitOfArmorBase(suitOfArmor_NetherStarID, new ItemStack[]{ new ItemStack(AdvancedCraft.netherStarBoots), new ItemStack(AdvancedCraft.netherStarLeggings), new ItemStack(AdvancedCraft.netherStarChestplate), new ItemStack(AdvancedCraft.netherStarHelmet), new ItemStack(AdvancedCraft.netherStarSword) }).setUnlocalizedName("suitOfArmor_NetherStar").setTextureName("advancedCraft:tool/suits/suitOfArmor_NetherStar");
+                 suitOfArmor_Diamond = new suitOfArmorBase(suitOfArmor_DiamondID, new ItemStack[]{ new ItemStack(Item.bootsDiamond), new ItemStack(Item.legsDiamond), new ItemStack(Item.plateDiamond), new ItemStack(Item.helmetDiamond), new ItemStack(Item.swordDiamond) }).setUnlocalizedName("suitOfArmor_Diamond");
+                 suitOfArmor_Iron = new suitOfArmorBase(suitOfArmor_IronID, new ItemStack[]{ new ItemStack(Item.bootsIron), new ItemStack(Item.legsIron), new ItemStack(Item.plateIron), new ItemStack(Item.helmetIron), new ItemStack(Item.swordIron) }).setUnlocalizedName("suitOfArmor_Iron");
+                 suitOfArmor_Gold = new suitOfArmorBase(suitOfArmor_GoldID, new ItemStack[]{ new ItemStack(Item.bootsGold), new ItemStack(Item.legsGold), new ItemStack(Item.plateGold), new ItemStack(Item.helmetGold), new ItemStack(Item.swordGold) }).setUnlocalizedName("suitOfArmor_Gold");
                  
                  
                  //Set up Blocks//
@@ -345,8 +376,9 @@ public class AdvancedCraft {
                 
                 
                 //Register Fuels//
+                if (!disableFuels) {
                 GameRegistry.registerFuelHandler(new AdvancedCraftFuelHandler());
-                
+                }
                 
                 
                 //Register Tools//
@@ -379,6 +411,19 @@ public class AdvancedCraft {
                 
                 GameRegistry.registerItem(weathermansCompass, "weathermansCompass");
                 LanguageRegistry.addName(weathermansCompass, "Weatherman's Compass");
+                
+                //Register suits of armor//
+                GameRegistry.registerItem(suitOfArmor_NetherStar, "suitOfArmor_NetherStar");
+                LanguageRegistry.addName(suitOfArmor_NetherStar, "Nether Star Suit Of Armor");
+                
+                GameRegistry.registerItem(suitOfArmor_Diamond, "suitOfArmor_Diamond");
+                LanguageRegistry.addName(suitOfArmor_Diamond, "Diamond Suit Of Armor");
+                
+                GameRegistry.registerItem(suitOfArmor_Iron, "suitOfArmor_Iron");
+                LanguageRegistry.addName(suitOfArmor_Iron, "Iron Suit Of Armor");
+                
+                GameRegistry.registerItem(suitOfArmor_Gold, "suitOfArmor_Gold");
+                LanguageRegistry.addName(suitOfArmor_Gold, "Gold Suit Of Armor");
                 
                 
                 
@@ -456,6 +501,11 @@ public class AdvancedCraft {
                 GameRegistry.addRecipe(new ItemStack(AdvancedCraft.netherStarHoe), "nn ", " s ", " s ",
                         'n', new ItemStack(Item.netherStar), 's', new ItemStack(Item.stick));
                 
+                //Recipes for Suit of armor//
+                GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.suitOfArmor_NetherStar), suitOfArmorBase.getData(AdvancedCraft.suitOfArmor_NetherStar.itemID));
+                GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.suitOfArmor_Diamond), suitOfArmorBase.getData(AdvancedCraft.suitOfArmor_Diamond.itemID));
+                GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.suitOfArmor_Iron), suitOfArmorBase.getData(AdvancedCraft.suitOfArmor_Iron.itemID));
+                GameRegistry.addShapelessRecipe(new ItemStack(AdvancedCraft.suitOfArmor_Gold), suitOfArmorBase.getData(AdvancedCraft.suitOfArmor_Gold.itemID));
                 
                 
                 //Smelting//

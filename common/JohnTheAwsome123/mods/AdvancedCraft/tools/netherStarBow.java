@@ -36,7 +36,7 @@ public class netherStarBow extends Item
         super(par1);
         this.maxStackSize = 1;
         this.setMaxDamage(512);
-        setUnlocalizedName("netherStarBow");
+        this.setUnlocalizedName("netherStarBow");
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
 

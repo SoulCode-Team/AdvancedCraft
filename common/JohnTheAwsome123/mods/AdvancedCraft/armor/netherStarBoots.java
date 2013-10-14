@@ -16,14 +16,14 @@ public class netherStarBoots extends ItemArmor
     public netherStarBoots(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
-        setUnlocalizedName("netherStarBoots");
-        setCreativeTab(CreativeTabs.tabCombat);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarBoots");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
         this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:armor/netherStar_Boots");
     }
+    @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer){
     return "AdvancedCraft:textures/models/armor/netherStar_layer_1.png";
     }

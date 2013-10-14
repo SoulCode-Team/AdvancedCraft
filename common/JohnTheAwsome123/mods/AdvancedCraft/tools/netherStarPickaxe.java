@@ -16,8 +16,8 @@ public class netherStarPickaxe extends ItemPickaxe
     public netherStarPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, par2EnumToolMaterial);
-        setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        setUnlocalizedName("netherStarPickaxe");
+        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setUnlocalizedName("netherStarPickaxe");
     }
     public boolean canHarvestBlock(Block par1Block)
     {
