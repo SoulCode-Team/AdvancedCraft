@@ -30,7 +30,6 @@ public class ACCraftingHandler implements ICraftingHandler
     @Override
     public void onSmelting(EntityPlayer player, ItemStack item)
     {
-        // TODO Auto-generated method stub
 
     }
 
