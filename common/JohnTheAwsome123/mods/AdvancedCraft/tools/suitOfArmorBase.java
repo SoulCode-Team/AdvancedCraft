@@ -3,8 +3,13 @@ package JohnTheAwsome123.mods.AdvancedCraft.tools;
 import java.util.HashMap;
 import java.util.Map;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.armor.*;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -14,7 +19,6 @@ import net.minecraft.world.World;
 public class suitOfArmorBase extends Item
 {
     public static Map<Integer, ItemStack[]> data = new HashMap<Integer, ItemStack[]>();
-//    ItemStack toolStack[] = { new ItemStack(AdvancedCraft.netherStarBoots), new ItemStack(AdvancedCraft.netherStarLeggings), new ItemStack(AdvancedCraft.netherStarChestplate), new ItemStack(AdvancedCraft.netherStarHelmet), new ItemStack(AdvancedCraft.netherStarSword) };
     
     public ItemStack toolStack[];
     /**
@@ -34,6 +38,12 @@ public class suitOfArmorBase extends Item
     
     public static ItemStack[] getData(int itemID){
         return data.get(itemID);
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1registerIcon){
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "armor/suit/"));
+//        System.out.println("texture:" + this.getUnlocalizedName(new ItemStack(Item.itemsList[this.itemID])));
     }
     
     @Override

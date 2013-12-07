@@ -1,5 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.util;
 
+import net.minecraft.item.Item;
+
 public class StringUtils
 {
 
@@ -7,4 +9,5 @@ public class StringUtils
     {
         return Localization.get(key);
     }
+    
 }

@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -21,7 +22,7 @@ public class netherStarOre extends Block
         public netherStarOre(int id, Material par2material) 
         {
                 super(id, par2material);
-                this.setUnlocalizedName("netherStarOre");
+                this.setUnlocalizedName("netherStar_Ore");
                 this.setCreativeTab(CreativeTabs.tabBlock);
                 this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
                 this.setHardness(4.0F);
@@ -30,7 +31,7 @@ public class netherStarOre extends Block
         }
         @SideOnly(Side.CLIENT)
         public void registerIcons(IconRegister par1registerIcon){
-            this.blockIcon = par1registerIcon.registerIcon("AdvancedCraft:netherStar_Ore");
+            this.blockIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this));
         }
         public int idDropped(int par1, Random par2Random, int par3){
             return AdvancedCraft.netherStarShard.itemID;

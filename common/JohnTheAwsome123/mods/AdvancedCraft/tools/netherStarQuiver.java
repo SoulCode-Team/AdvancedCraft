@@ -3,6 +3,7 @@ package JohnTheAwsome123.mods.AdvancedCraft.tools;
 import java.util.List;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -21,7 +22,7 @@ public class netherStarQuiver extends Item
         super(par1);
         this.setMaxStackSize(1);
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        this.setUnlocalizedName("netherStarQuiver");
+        this.setUnlocalizedName("netherStar_Quiver");
         this.isDamageable();
         this.setMaxDamage(64);
     }
@@ -32,7 +33,7 @@ public class netherStarQuiver extends Item
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/netherStar_Quiver");
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "tool/"));
     }
 //    public void onUpdate(ItemStack par1ItemStack, World par2World, Entity par3Entity, int par4, boolean par5){
 //        if (AdvancedCraft.netherStarBow.hasFired){

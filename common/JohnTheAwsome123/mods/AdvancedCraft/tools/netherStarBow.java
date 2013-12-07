@@ -3,6 +3,7 @@ package JohnTheAwsome123.mods.AdvancedCraft.tools;
 import java.util.List;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -36,7 +37,7 @@ public class netherStarBow extends Item
         super(par1);
         this.maxStackSize = 1;
         this.setMaxDamage(512);
-        this.setUnlocalizedName("netherStarBow");
+        this.setUnlocalizedName("netherStar_Bow");
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
 
@@ -193,7 +194,7 @@ public class netherStarBow extends Item
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.itemIcon = par1IconRegister.registerIcon("AdvancedCraft:tool/netherStar_Bow");
+        this.itemIcon = par1IconRegister.registerIcon(ACTextures.GetTextureNameFull(this, "tool/"));
 //        this.iconArray = new Icon[bowPullIconNameArray.length];
 //
 //        for (int i = 0; i < this.iconArray.length; ++i)

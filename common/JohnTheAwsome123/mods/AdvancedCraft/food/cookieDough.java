@@ -3,6 +3,7 @@ package JohnTheAwsome123.mods.AdvancedCraft.food;
 import java.util.List;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -30,7 +31,7 @@ public class cookieDough extends ItemFood
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:food/cookieDough");
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "food/"));
     }
     public void onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {

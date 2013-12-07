@@ -1,6 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.tools;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -15,10 +16,10 @@ public class netherStarSword extends ItemSword
     {
         super(par1, par2EnumToolMaterial);
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        this.setUnlocalizedName("netherStarSword");
+        this.setUnlocalizedName("netherStar_Sword");
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/netherStar_Sword");
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "tool/"));
     }
 }

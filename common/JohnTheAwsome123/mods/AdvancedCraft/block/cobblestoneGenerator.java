@@ -38,7 +38,8 @@ public class cobblestoneGenerator extends BlockContainer
     
     public TileEntity createNewTileEntity(World par1World)
     {
-        return new TileEntityCobblestoneGenerator();
+//        return new TileEntityCobblestoneGenerator();
+        return null;
     }
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int metadata, float what, float these, float are) {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);

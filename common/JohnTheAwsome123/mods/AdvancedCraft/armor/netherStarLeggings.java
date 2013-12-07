@@ -1,6 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.armor;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -16,15 +17,16 @@ public class netherStarLeggings extends ItemArmor
     public netherStarLeggings(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
-        this.setUnlocalizedName("netherStarLeggings");
+        this.setUnlocalizedName("netherStar_Leggings");
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:armor/netherStar_Leggings");
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "armor/"));
     }
+    @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer){
-    return "AdvancedCraft:textures/models/armor/netherStar_layer_2.png";
+        return ACTextures.RESOURCE_CONTEXT + ":textures/models/armor/netherStar_layer_2.png";
     }
 
 }

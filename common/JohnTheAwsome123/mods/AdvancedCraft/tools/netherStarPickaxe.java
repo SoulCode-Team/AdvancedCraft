@@ -1,6 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.tools;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -17,7 +18,7 @@ public class netherStarPickaxe extends ItemPickaxe
     {
         super(par1, par2EnumToolMaterial);
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        this.setUnlocalizedName("netherStarPickaxe");
+        this.setUnlocalizedName("netherStar_Pickaxe");
     }
     public boolean canHarvestBlock(Block par1Block)
     {
@@ -25,6 +26,6 @@ public class netherStarPickaxe extends ItemPickaxe
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/netherStar_Pickaxe");
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "tool/"));
     }
 }

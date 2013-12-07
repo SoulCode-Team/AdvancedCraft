@@ -141,13 +141,13 @@ public class weathermansCompass extends Item
             case 1: return this.itemIcon1;
             case 2: return this.itemIcon2;
             case 3: return this.itemIcon3;
-            default: return this.itemIcon;
+            default: return this.itemIcon0;
         }
     }
     
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/Weathermans_Compass");
+//        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/Weathermans_Compass");
         this.itemIcon0 = par1registerIcon.registerIcon("AdvancedCraft:tool/Weathermans_Compass_Sun");
         this.itemIcon1 = par1registerIcon.registerIcon("AdvancedCraft:tool/Weathermans_Compass_Rain");
         this.itemIcon2 = par1registerIcon.registerIcon("AdvancedCraft:tool/Weathermans_Compass_Thunder");

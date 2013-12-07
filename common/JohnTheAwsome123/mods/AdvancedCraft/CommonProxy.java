@@ -1,5 +1,8 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
+
 public class CommonProxy {
 
     // Client stuff
@@ -9,5 +12,9 @@ public class CommonProxy {
     public String getCurrentLanguage()
     {
         return null;
+    }
+    
+    public void RegisterCommonTickHandler(){
+        TickRegistry.registerTickHandler(new CommonTickHandler(), Side.SERVER);
     }
 }

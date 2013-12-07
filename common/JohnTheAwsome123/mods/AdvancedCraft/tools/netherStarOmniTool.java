@@ -1,6 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.tools;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -18,7 +19,7 @@ public class netherStarOmniTool extends ItemTool
     {
         super(par1, 3.0F, par3EnumToolMaterial, blocksEffectiveAgainst);
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
-        this.setUnlocalizedName("netherStarOmniTool");
+        this.setUnlocalizedName("netherStar_OmniTool");
     }
     public boolean canHarvestBlock(Block par1Block)
     {
@@ -30,6 +31,6 @@ public class netherStarOmniTool extends ItemTool
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/netherStar_OmniTool");
+        this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "tool/"));
     }
 }
