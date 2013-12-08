@@ -7,7 +7,7 @@ import net.minecraft.util.StatCollector;
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.block.container.*;
 import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.*;
-import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
 import JohnTheAwsome123.mods.AdvancedCraft.util.Localization;
 
 import org.lwjgl.opengl.GL11;

@@ -7,6 +7,15 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
 
+/**
+ * AdvancedCraft
+ * 
+ * Config
+ * @category Configuration
+ * @author JohnTheAwsome123
+ * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
+ * 
+ */
 public class Config
 {
     public int startBlockID = 2500;
@@ -14,20 +23,16 @@ public class Config
     public int startItemID = 2700;
     public int ItemIncr = 0;
     
+    
     // Define Items//
     public static int enderHeartID;
-
     public static int netherStarNuggetID;
-
     public static int netherStarShardID;
-
     public static int DoublerID;
 
     // Define Food//
     public static int sugarCookieID;
-
     public static int sugarCookieDoughID;
-
     public static int cookieDoughID;
 
     // Define Tool Material
@@ -35,54 +40,33 @@ public class Config
 
     // Define Tools//
     public static int netherStarPickaxeID;
-
     public static int netherStarAxeID;
-
     public static int netherStarShovelID;
-
     public static int netherStarSwordID;
-
     public static int netherStarHoeID;
-
     public static int netherStarOmniToolID;
-
     public static int netherStarBowID;
-
     public static int netherStarQuiverID;
-
     public static int advancedClockID;
-
     public static int weathermansCompassID;
-    
     public static int talismanOfRecollectionID;
-    
     public static int SpongeID;
     
     
     //Define Suits of armor//
     public static int suitOfArmor_NetherStarID;
-
     public static int suitOfArmor_DiamondID;
-
     public static int suitOfArmor_IronID;
-
     public static int suitOfArmor_GoldID;
 
     // Define Blocks//
     public static int netherStarBlockID;
-
     public static int netherStarOreID;
-
     public static int cobblestoneGeneratorID;
-
     public static int nerdPoleID;
-
     public static int advancedFurnaceIdleID;
-
     public static int advancedFurnaceActiveID;
-
     public static int mobCurtainID;
-    
     public static int LiquidRemove_HolderID;
 
 
@@ -91,11 +75,8 @@ public class Config
 
     // Define Armor//
     public static int netherStarHelmetID;
-
     public static int netherStarChestplateID;
-
     public static int netherStarLeggingsID;
-
     public static int netherStarBootsID;
 
     // Define Item Crafting Disabling//
@@ -109,6 +90,9 @@ public class Config
 
     // Define Doubler Disabling//
     public static boolean disableDoubler;
+    
+    //Define NBT Doubler Disabling//
+    public static boolean disableAdvancedDoubler;
 
     // Define Armor Disabling//
     public static boolean disableNetherStarHelmet;

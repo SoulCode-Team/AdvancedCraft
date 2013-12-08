@@ -292,8 +292,8 @@ public class AdvancedCraft
         GameRegistry.registerItem(weathermansCompass, "weathermansCompass");
         LanguageRegistry.addName(weathermansCompass, "Weatherman's Compass");
 
-        GameRegistry.registerItem(talismanOfRecollection, "talismanOfRecollection");
-        LanguageRegistry.addName(talismanOfRecollection, "Talisman Of Recollection");
+//        GameRegistry.registerItem(talismanOfRecollection, "talismanOfRecollection");
+//        LanguageRegistry.addName(talismanOfRecollection, "Talisman Of Recollection");
 
         GameRegistry.registerItem(Sponge, "Sponge");
         LanguageRegistry.addName(Sponge, "Sponge");
@@ -404,7 +404,7 @@ public class AdvancedCraft
         {
             GameRegistry.addRecipe(new DoublerRecipe());
         }
-        if (false)//TODO add alternate config option
+        if (config.disableAdvancedDoubler)//TODO add alternate config option
         {
             
             for (int i = 0; i < Item.itemsList.length; i++)

@@ -1,7 +1,17 @@
 package JohnTheAwsome123.mods.AdvancedCraft.armor;
 
+/**
+ * AdvancedCraft
+ * 
+ * Nether Star Chestplate
+ * @category Item
+ * @category Armor
+ * @author JohnTheAwsome123
+ * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
+ * 
+ */
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -13,7 +23,6 @@ import net.minecraft.item.ItemStack;
 
 public class netherStarChestplate extends ItemArmor
 {
-
     public netherStarChestplate(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);

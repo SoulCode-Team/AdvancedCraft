@@ -7,6 +7,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
+/**
+ * AdvancedCraft
+ * 
+ * DoublerRecipe
+ * 
+ * @author JohnTheAwsome123
+ * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
+ * 
+ */
 public class DoublerRecipe implements IRecipe
 {
 

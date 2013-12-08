@@ -1,7 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.tools;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;

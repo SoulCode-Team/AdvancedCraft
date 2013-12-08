@@ -3,7 +3,7 @@ package JohnTheAwsome123.mods.AdvancedCraft.block;
 import java.util.Random;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;

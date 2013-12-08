@@ -5,12 +5,21 @@ import java.util.List;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.constants.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+/**
+ * AdvancedCraft
+ * 
+ * Doubler
+ * @category Item
+ * @author JohnTheAwsome123
+ * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
+ * 
+ */
 public class Doubler extends Item
 {
 
