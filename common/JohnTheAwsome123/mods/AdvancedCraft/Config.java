@@ -121,7 +121,7 @@ public class Config
         netherStarNuggetID = config.get("Item", "Nether Star Nugget", startItemID + ItemIncr).getInt();         ItemIncr += 1;
         enderHeartID = config.get("Item", "Ender Heart", startItemID + ItemIncr).getInt();                      ItemIncr += 1;
         DoublerID = config.get("Item", "Doubler", startItemID + ItemIncr).getInt();                             ItemIncr += 1;
-
+        
         disableDragonEgg = config.get("Options", "disable Dragon Egg crafting", false).getBoolean(false);
 
         // Configs for Food//
@@ -163,6 +163,10 @@ public class Config
 
         // Configs for fuels//
         disableFuels = config.get("Options", "disable alternate smelting fuels", false).getBoolean(false);
+        
+        //Configs for Doubler//
+        disableDoubler = config.get("Options", "disable item Doubler", false).getBoolean(false);
+        disableAdvancedDoubler = config.get("Options", "disable item Doubler NBT Copy (does not disable doubler completely)", false).getBoolean(false);
         
         
         if (config.hasChanged())

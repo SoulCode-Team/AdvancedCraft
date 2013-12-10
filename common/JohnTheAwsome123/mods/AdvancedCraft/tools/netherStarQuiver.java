@@ -29,7 +29,7 @@ public class netherStarQuiver extends Item
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
     {
-    list.add("Holds arrows for the Nether Star Bow");
+    list.add("Holds arrows for the Nether Star Bow (WIP)");
     }
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){

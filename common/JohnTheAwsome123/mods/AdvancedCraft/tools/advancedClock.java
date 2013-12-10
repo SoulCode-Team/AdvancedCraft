@@ -36,7 +36,6 @@ public class advancedClock extends Item
         this.setMaxStackSize(1);
         this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
         this.setUnlocalizedName("advancedClock");
-        this.setTextureName("clock");
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
     }
@@ -81,16 +80,16 @@ public class advancedClock extends Item
     public Icon getIconFromDamage(int par1)
     {
         switch (par1){
-            case 0: return this.itemIcon0;
+            case 0: return this.itemIcon;
             case 1: return this.itemIcon1;
             case 2: return this.itemIcon2;
-            default: return this.itemIcon0;
+            default: return this.itemIcon;
         }
     }
     
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1registerIcon){
-//        this.itemIcon = par1registerIcon.registerIcon("AdvancedCraft:tool/Weathermans_Compass");
+        this.itemIcon = par1registerIcon.registerIcon("clock");
 //        this.itemIcon0 = (Icon)setTextureName("clock");
         this.itemIcon1 = par1registerIcon.registerIcon("AdvancedCraft:tool/advancedClock_night-day");
         this.itemIcon2 = par1registerIcon.registerIcon("AdvancedCraft:tool/advancedClock_faster");

@@ -34,9 +34,9 @@ public class netherStarBlock extends Block
     public void registerIcons(IconRegister par1registerIcon){
         this.blockIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this));
     }
-    public void onEntityWalking(World par1World, int par2, int par3, int par4, Entity par5Entity) {
-        if (par5Entity instanceof EntityPlayer) {
-         ((EntityPlayer) par5Entity).addPotionEffect(new PotionEffect(Potion.heal.getId(), 20, 1));
-        }
-       }
+//    public void onEntityWalking(World par1World, int par2, int par3, int par4, Entity par5Entity) {
+//        if (par5Entity instanceof EntityPlayer) {
+//         ((EntityPlayer) par5Entity).addPotionEffect(new PotionEffect(Potion.heal.getId(), 20, 1));
+//        }
+//       }
 }

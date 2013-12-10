@@ -1,11 +1,13 @@
 package JohnTheAwsome123.mods.AdvancedCraft.recipes;
 
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.Config;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
+import net.minecraftforge.common.Configuration;
 
 /**
  * AdvancedCraft
@@ -24,6 +26,7 @@ public class DoublerRecipe implements IRecipe
     {
         ItemStack doubledItem = null;
         int countDoubler = 0;
+        int countItem = 0;
 
         
         for (int i = 0; i < inventorycrafting.getSizeInventory(); i++)
@@ -33,20 +36,22 @@ public class DoublerRecipe implements IRecipe
             ItemStack checkItem = inventorycrafting.getStackInSlot(i);
             if (checkItem.getItem() == null) continue;
 
-            if (checkItem.getItem() != AdvancedCraft.Doubler && checkItem.getItem() != null)
-            {
-                doubledItem = checkItem;
-            }
-
             if (checkItem.getItem() == AdvancedCraft.Doubler)
             {
                 countDoubler += 1;
 
             }
+            
+            if (checkItem.getItem() != AdvancedCraft.Doubler && checkItem.getItem() != null)
+            {
+                doubledItem = checkItem;
+                countItem += 1;
+            }
+            
 
         }
 
-        if (doubledItem != null && countDoubler > 0)
+        if (doubledItem != null && countDoubler > 0 && countItem == 1)
         {
             return true;
         }
@@ -82,7 +87,13 @@ public class DoublerRecipe implements IRecipe
         
         ItemStack returnItem = doubledItem.copy();
         returnItem.stackSize = countDoubler +1;
-        return returnItem;
+        if (!AdvancedCraft.config.disableAdvancedDoubler){
+          return returnItem;  
+        }
+        else{
+            return new ItemStack(returnItem.getItem(), returnItem.stackSize, returnItem.getItemDamage());
+        }
+        
     }
 
     @Override

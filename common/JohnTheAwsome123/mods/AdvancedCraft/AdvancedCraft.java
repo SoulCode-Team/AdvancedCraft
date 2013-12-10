@@ -44,7 +44,7 @@ public class AdvancedCraft
     };
 
     // Define Config//
-    public Config config;
+    public static Config config;
 
     // Define Items//
     public static Item enderHeart;
@@ -157,7 +157,9 @@ public class AdvancedCraft
         netherStarQuiver = new netherStarQuiver(config.netherStarQuiverID);
         advancedClock = new advancedClock(config.advancedClockID);
         weathermansCompass = new weathermansCompass(config.weathermansCompassID);
-//        talismanOfRecollection = new talismanOfRecollection(config.talismanOfRecollectionID); TODO work on taliisman of recollection
+        // talismanOfRecollection = new
+        // talismanOfRecollection(config.talismanOfRecollectionID); TODO work on
+        // taliisman of recollection
         Sponge = new Sponge(config.SpongeID);
 
         // Set Up Suit Of Armor//
@@ -292,8 +294,10 @@ public class AdvancedCraft
         GameRegistry.registerItem(weathermansCompass, "weathermansCompass");
         LanguageRegistry.addName(weathermansCompass, "Weatherman's Compass");
 
-//        GameRegistry.registerItem(talismanOfRecollection, "talismanOfRecollection");
-//        LanguageRegistry.addName(talismanOfRecollection, "Talisman Of Recollection");
+        // GameRegistry.registerItem(talismanOfRecollection,
+        // "talismanOfRecollection");
+        // LanguageRegistry.addName(talismanOfRecollection,
+        // "Talisman Of Recollection");
 
         GameRegistry.registerItem(Sponge, "Sponge");
         LanguageRegistry.addName(Sponge, "Sponge");
@@ -395,60 +399,77 @@ public class AdvancedCraft
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-//        System.out.println(FluidRegistry.getFluidID(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName()));
-//        System.out.println(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName());
+        // System.out.println(FluidRegistry.getFluidID(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName()));
+        // System.out.println(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName());
 
-        
         // Recipes for Doubler//
         if (!config.disableDoubler)
         {
-            GameRegistry.addRecipe(new DoublerRecipe());
+                GameRegistry.addRecipe(new DoublerRecipe());
         }
-        if (config.disableAdvancedDoubler)//TODO add alternate config option
-        {
-            
-            for (int i = 0; i < Item.itemsList.length; i++)
-            {
-                if (Item.itemsList[i] != null)
-                {
-                    GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 2), new ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
-                }
-            }
-            for (int i = 0; i < Item.itemsList.length; i++)
-            {
-                if (Item.itemsList[i] != null)
-                {
-                    GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 3), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
-                }
-            }
-            for (int i = 0; i < Item.itemsList.length; i++)
-            {
-                if (Item.itemsList[i] != null)
-                {
-                    GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 4), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
-                }
-            }
-            for (int i = 0; i < Item.itemsList.length; i++)
-            {
-                if (Item.itemsList[i] != null)
-                {
-                    GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 5), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
-                }
-            }
-            for (int i = 0; i < Item.itemsList.length; i++)
-            {
-                if (Item.itemsList[i] != null)
-                {
-                    GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 6), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
-                }
-            }
-            for (int i = 0; i < Item.itemsList.length; i++)
-            {
-                if (Item.itemsList[i] != null)
-                {
-                    GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 7), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
-                }
-            }
-        }
+        // for (int i = 0; i < Item.itemsList.length; i++)
+        // {
+        // if (Item.itemsList[i] != null)
+        // {
+        // GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 2),
+        // new ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(Item.itemsList[i]));
+        // }
+        // }
+        // for (int i = 0; i < Item.itemsList.length; i++)
+        // {
+        // if (Item.itemsList[i] != null)
+        // {
+        // GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 3),
+        // new ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
+        // }
+        // }
+        // for (int i = 0; i < Item.itemsList.length; i++)
+        // {
+        // if (Item.itemsList[i] != null)
+        // {
+        // GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 4),
+        // new ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
+        // }
+        // }
+        // for (int i = 0; i < Item.itemsList.length; i++)
+        // {
+        // if (Item.itemsList[i] != null)
+        // {
+        // GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 5),
+        // new ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
+        // }
+        // }
+        // for (int i = 0; i < Item.itemsList.length; i++)
+        // {
+        // if (Item.itemsList[i] != null)
+        // {
+        // GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 6),
+        // new ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
+        // }
+        // }
+        // for (int i = 0; i < Item.itemsList.length; i++)
+        // {
+        // if (Item.itemsList[i] != null)
+        // {
+        // GameRegistry.addShapelessRecipe(new ItemStack(Item.itemsList[i], 7),
+        // new ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new
+        // ItemStack(AdvancedCraft.Doubler), new ItemStack(Item.itemsList[i]));
+        // }
+        // }
     }
 }
