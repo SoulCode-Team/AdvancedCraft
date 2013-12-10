@@ -39,6 +39,5 @@ public class Doubler extends Item
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
     {
     list.add("Crafted with any item. Results in a duplicate.");
-    list.add("!Does not work with damage or enchanted items yet!");
     }
 }

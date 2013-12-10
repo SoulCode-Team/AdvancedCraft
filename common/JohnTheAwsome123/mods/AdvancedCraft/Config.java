@@ -142,7 +142,7 @@ public class Config
         netherStarQuiverID = config.get("Item", "Nether Star Quiver", startItemID + ItemIncr).getInt();         ItemIncr += 1;
         advancedClockID = config.get("Item", "Advanced Clock", startItemID + ItemIncr).getInt();                ItemIncr += 1;
         weathermansCompassID = config.get("Item", "Weatherman's Clock", startItemID + ItemIncr).getInt();       ItemIncr += 1;
-        talismanOfRecollectionID = config.get("Item", "Talisman Of Recollection", startItemID + ItemIncr).getInt(); ItemIncr += 1;
+//        talismanOfRecollectionID = config.get("Item", "Talisman Of Recollection", startItemID + ItemIncr).getInt(); ItemIncr += 1;
         SpongeID = config.get("Item", "Sponge", startItemID + ItemIncr).getInt();                               ItemIncr += 1;
 
         // Configs for suits of armor//
