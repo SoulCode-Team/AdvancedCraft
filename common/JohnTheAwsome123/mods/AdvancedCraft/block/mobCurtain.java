@@ -44,7 +44,7 @@ public class mobCurtain extends Block
     {
         if (par5Entity instanceof EntityLiving) {
 //            if (par5Entity instanceof EntityPlayer){
-         ((EntityPlayer) par5Entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 40, 1));
+//         ((EntityPlayer) par5Entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 40, 1));
 //        }
         }
     }

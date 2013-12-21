@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -84,14 +85,16 @@ public class CommonTickHandler implements ITickHandler
                 Minecraft.getMinecraft().thePlayer.stepHeight = 0.5F;
             }
         }
-        if (player.getCurrentItemOrArmor(1) != null)
+        if (player.getCurrentItemOrArmor(3) != null)
         {
-            if (player.getCurrentItemOrArmor(1).itemID == AdvancedCraft.netherStarHelmet.itemID)
+            if (player.getCurrentItemOrArmor(3).itemID == AdvancedCraft.netherStarHelmet.itemID)
             {
 //                if (!Minecraft.getMinecraft().thePlayer.getActivePotionEffects().contains(Potion.nightVision))
                 {
-                    Minecraft.getMinecraft().thePlayer.addPotionEffect(new PotionEffect(Potion.nightVision.id, 200, 0, false));
+//                    Minecraft.getMinecraft().thePlayer.addPotionEffect(new PotionEffect(Potion.nightVision.id, 200, 0, false));
                 }
+                if (!Minecraft.getMinecraft().theWorld.isRemote)
+                Minecraft.getMinecraft().thePlayer.curePotionEffects(new ItemStack(Item.bucketMilk));
             }
         }
         if (player.getCurrentItemOrArmor(0) != null)
