@@ -1,7 +1,5 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
-import net.minecraftforge.common.MinecraftForge;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LanguageRegisteryHandler
@@ -75,6 +73,7 @@ public class LanguageRegisteryHandler
         // LanguageRegistry.addName(talismanOfRecollection,
         // "Talisman Of Recollection");
         LanguageRegistry.addName(AC.Sponge, "Sponge");
+        LanguageRegistry.addName(AC.blockPlacer, "Block Placer");
     }
 
     public static void registerSuitOfArmor()

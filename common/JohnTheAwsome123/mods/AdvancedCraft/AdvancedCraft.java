@@ -1,26 +1,47 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
 import net.minecraft.block.Block;
-import net.minecraftforge.common.Property;
-import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.*;
-import JohnTheAwsome123.mods.AdvancedCraft.food.*;
-import JohnTheAwsome123.mods.AdvancedCraft.lib.*;
-import net.minecraft.src.ModLoader;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
-import JohnTheAwsome123.mods.AdvancedCraft.*;
 import net.minecraftforge.common.EnumHelper;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.liquids.LiquidDictionary;
-import net.minecraftforge.oredict.OreDictionary;
-import JohnTheAwsome123.mods.AdvancedCraft.armor.*;
-import JohnTheAwsome123.mods.AdvancedCraft.item.*;
-import JohnTheAwsome123.mods.AdvancedCraft.block.*;
-import JohnTheAwsome123.mods.AdvancedCraft.recipes.*;
-import JohnTheAwsome123.mods.AdvancedCraft.tools.*;
+import JohnTheAwsome123.mods.AdvancedCraft.armor.netherStarBoots;
+import JohnTheAwsome123.mods.AdvancedCraft.armor.netherStarChestplate;
+import JohnTheAwsome123.mods.AdvancedCraft.armor.netherStarHelmet;
+import JohnTheAwsome123.mods.AdvancedCraft.armor.netherStarLeggings;
+import JohnTheAwsome123.mods.AdvancedCraft.block.LiquidRemoveHolder;
+import JohnTheAwsome123.mods.AdvancedCraft.block.cobblestoneGenerator;
+import JohnTheAwsome123.mods.AdvancedCraft.block.nerdPole;
+import JohnTheAwsome123.mods.AdvancedCraft.block.netherStarBlock;
+import JohnTheAwsome123.mods.AdvancedCraft.block.netherStarOre;
+import JohnTheAwsome123.mods.AdvancedCraft.food.cookieDough;
+import JohnTheAwsome123.mods.AdvancedCraft.food.sugarCookie;
+import JohnTheAwsome123.mods.AdvancedCraft.food.sugarCookieDough;
+import JohnTheAwsome123.mods.AdvancedCraft.item.Doubler;
+import JohnTheAwsome123.mods.AdvancedCraft.item.enderHeart;
+import JohnTheAwsome123.mods.AdvancedCraft.item.netherStarNugget;
+import JohnTheAwsome123.mods.AdvancedCraft.item.netherStarShard;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ModCompatability;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
+import JohnTheAwsome123.mods.AdvancedCraft.recipes.DoublerRecipe;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.Sponge;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.advancedClock;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.blockPlacer;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.entityPlacer;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarAxe;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarBow;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarHoe;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarOmniTool;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarPickaxe;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarQuiver;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarShovel;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarSword;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.suitOfArmorBase;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.weathermansCompass;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -29,7 +50,9 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.*;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = Reference.MOD_NAME, version = "0.0.1", useMetadata = false, modid = Reference.MOD_ID, acceptedMinecraftVersions = "[1.6,1.7)", dependencies = "required-after:Forge@[9.10.0.800,)")
@@ -76,6 +99,8 @@ public class AdvancedCraft
     public static Item weathermansCompass;
     public static Item talismanOfRecollection;
     public static Item Sponge;
+    public static Item blockPlacer;
+    public static Item entityPlacer;
 
     // Define Suits of armor//
     public static Item suitOfArmor_NetherStar;
@@ -166,6 +191,8 @@ public class AdvancedCraft
         // talismanOfRecollection(config.talismanOfRecollectionID); TODO work on
         // taliisman of recollection
         Sponge = new Sponge(Config.SpongeID);
+        blockPlacer = new blockPlacer(20000);
+        entityPlacer = new entityPlacer(21000);
 
         // Set Up Suit Of Armor//
         suitOfArmor_NetherStar = new suitOfArmorBase(Config.suitOfArmor_NetherStarID, new ItemStack[] { new ItemStack(AdvancedCraft.netherStarBoots), new ItemStack(AdvancedCraft.netherStarLeggings), new ItemStack(AdvancedCraft.netherStarChestplate), new ItemStack(AdvancedCraft.netherStarHelmet), new ItemStack(AdvancedCraft.netherStarSword) }).setUnlocalizedName("suitOfArmor_NetherStar");
@@ -200,136 +227,9 @@ public class AdvancedCraft
         // GameRegistry.registerBlock(blazingTorch, "blazingTorch");
         // LanguageRegistry.addName(blazingTorch, "Blazing Torch");
 
-/*        // Register Blocks//
-        GameRegistry.registerBlock(netherStarBlock, "netherStarBlock");
-        LanguageRegistry.addName(netherStarBlock, "Nether Star Block");
-        MinecraftForge.setBlockHarvestLevel(netherStarBlock, "pickaxe", 4);
-
-        GameRegistry.registerBlock(netherStarOre, "netherStarOre");
-        LanguageRegistry.addName(netherStarOre, "Nether Star Ore");
-        MinecraftForge.setBlockHarvestLevel(netherStarOre, "pickaxe", 3);
-
-        GameRegistry.registerBlock(mobCurtain, "mobCurtain");
-        LanguageRegistry.addName(mobCurtain, "Mob Curtain (WIP)");
-
-        GameRegistry.registerBlock(nerdPole, "nerdPole");
-        LanguageRegistry.addName(nerdPole, "Nerd Pole");
-
-        GameRegistry.registerBlock(cobblestoneGenerator, "cobblestoneGenerator");
-        LanguageRegistry.addName(cobblestoneGenerator, "Cobblestone Generator (WIP)");
-
-        GameRegistry.registerBlock(LiquidRemove_Holder, "LiquidRemove_Holder");
-        LanguageRegistry.addName(LiquidRemove_Holder, "Liquid Removal Holder");
-
-        // GameRegistry.registerBlock(advancedFurnaceIdle,
-        // "advancedFurnaceIdle");
-        // LanguageRegistry.addName(advancedFurnaceIdle, "Advanced Furnace");
-        // MinecraftForge.setBlockHarvestLevel(advancedFurnaceIdle, "pickaxe",
-        // 1);
-
-        // Register Armor//
-        GameRegistry.registerItem(netherStarHelmet, "netherStarHelmet");
-        LanguageRegistry.addName(netherStarHelmet, "Nether Star Helmet");
-        // LanguageRegistry.instance().addStringLocalization("item.NetherStarHelmet.name",
-        // "en_US", "Nether Star Helmet");
-
-        GameRegistry.registerItem(netherStarChestplate, "netherStarChestplate");
-        LanguageRegistry.addName(netherStarChestplate, "Nether Star Chestplate");
-
-        GameRegistry.registerItem(netherStarLeggings, "netherStarLeggings");
-        LanguageRegistry.addName(netherStarLeggings, "Nether Star Leggings");
-
-        GameRegistry.registerItem(netherStarBoots, "netherStarBoots");
-        LanguageRegistry.addName(netherStarBoots, "Nether Star Boots");
-
-        // Register Items//
-        GameRegistry.registerItem(netherStarNugget, "netherStarNugget");
-        LanguageRegistry.addName(netherStarNugget, "Nether Star Nugget");
-
-        GameRegistry.registerItem(netherStarShard, "netherStarShard");
-        LanguageRegistry.addName(netherStarShard, "Nether Star Shard");
-
-        GameRegistry.registerItem(enderHeart, "enderHeart");
-        LanguageRegistry.addName(enderHeart, "Ender Heart");
-
-        if (!Config.disableDoubler)
-        {
-            GameRegistry.registerItem(Doubler, "Doubler");
-            LanguageRegistry.addName(Doubler, "Doubler");
-        }
-
-        // Register Food//
-        GameRegistry.registerItem(sugarCookie, "sugarCookie");
-        LanguageRegistry.addName(sugarCookie, "Sugar Cookie");
-
-        GameRegistry.registerItem(sugarCookieDough, "sugarCookieDough");
-        LanguageRegistry.addName(sugarCookieDough, "Sugar Cookie Dough");
-
-        GameRegistry.registerItem(cookieDough, "cookieDough");
-        LanguageRegistry.addName(cookieDough, "Cookie Dough");
-
-        // Register Fuels//
-        if (!Config.disableFuels)
-        {
-            GameRegistry.registerFuelHandler(new ACFuelHandler());
-        }
-
-        // Register Tools//
-        GameRegistry.registerItem(netherStarSword, "netherStarSword");
-        LanguageRegistry.addName(netherStarSword, "Nether Star Sword");
-
-        GameRegistry.registerItem(netherStarShovel, "netherStarShovel");
-        LanguageRegistry.addName(netherStarShovel, "Nether Star Shovel");
-
-        GameRegistry.registerItem(netherStarPickaxe, "netherStarPickaxe");
-        LanguageRegistry.addName(netherStarPickaxe, "Nether Star Pickaxe");
-
-        GameRegistry.registerItem(netherStarAxe, "netherStarAxe");
-        LanguageRegistry.addName(netherStarAxe, "Nether Star Axe");
-
-        GameRegistry.registerItem(netherStarHoe, "netherStarHoe");
-        LanguageRegistry.addName(netherStarHoe, "Nether Star Hoe");
-
-        GameRegistry.registerItem(netherStarOmniTool, "netherStarOmniTool");
-        LanguageRegistry.addName(netherStarOmniTool, "Nether Star Omni Tool");
-
-        GameRegistry.registerItem(netherStarBow, "netherStarBow");
-        LanguageRegistry.addName(netherStarBow, "Nether Star Bow");
-
-        GameRegistry.registerItem(netherStarQuiver, "netherStarQuiver");
-        LanguageRegistry.addName(netherStarQuiver, "Nether Star Quiver");
-
-        GameRegistry.registerItem(advancedClock, "advancedClock");
-        LanguageRegistry.addName(advancedClock, "Advanced Clock");
-
-        GameRegistry.registerItem(weathermansCompass, "weathermansCompass");
-        LanguageRegistry.addName(weathermansCompass, "Weatherman's Compass");
-
-        // GameRegistry.registerItem(talismanOfRecollection,
-        // "talismanOfRecollection");
-        // LanguageRegistry.addName(talismanOfRecollection,
-        // "Talisman Of Recollection");
-
-        GameRegistry.registerItem(Sponge, "Sponge");
-        LanguageRegistry.addName(Sponge, "Sponge");
-
-        // Register suits of armor//
-        GameRegistry.registerItem(suitOfArmor_NetherStar, "suitOfArmor_NetherStar");
-        LanguageRegistry.addName(suitOfArmor_NetherStar, "Nether Star Suit Of Armor");
-
-        GameRegistry.registerItem(suitOfArmor_Diamond, "suitOfArmor_Diamond");
-        LanguageRegistry.addName(suitOfArmor_Diamond, "Diamond Suit Of Armor");
-
-        GameRegistry.registerItem(suitOfArmor_Iron, "suitOfArmor_Iron");
-        LanguageRegistry.addName(suitOfArmor_Iron, "Iron Suit Of Armor");
-
-        GameRegistry.registerItem(suitOfArmor_Gold, "suitOfArmor_Gold");
-        LanguageRegistry.addName(suitOfArmor_Gold, "Gold Suit Of Armor");*/
-
-
         
-        RecipeAdder.addCrafting("all");
-        RecipeAdder.addSmelting();
+        RecipeAdder.craftingAll();
+        RecipeAdder.smeltingAll();
         
         
         // Crafting//
@@ -347,6 +247,11 @@ public class AdvancedCraft
     {
         TickRegistry.registerTickHandler(new CommonTickHandler(), Side.SERVER);
         GameRegistry.registerCraftingHandler(new ACCraftingHandler());
+        if (ModCompatability.isBuildCraftLoaded())
+        {
+        	System.out.println("Loading BuildCraft Advanced Gear Recipes.");
+            RecipeAdder.craftingBC();
+        }
     }
 
     @EventHandler

@@ -10,16 +10,15 @@ package JohnTheAwsome123.mods.AdvancedCraft.armor;
  * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
  * 
  */
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class netherStarLeggings extends ItemArmor
 {
@@ -35,8 +34,9 @@ public class netherStarLeggings extends ItemArmor
         this.itemIcon = par1registerIcon.registerIcon(ACTextures.GetTextureNameFull(this, "armor/"));
     }
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer){
-        return ACTextures.RESOURCE_CONTEXT + ":textures/models/armor/netherStar_layer_2.png";
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
+    	int layer = slot == 2 ? 2 : 1;
+    	return ACTextures.RESOURCE_CONTEXT + ":textures/models/armor/netherStar_layer_" + layer + ".png";
     }
 
 }

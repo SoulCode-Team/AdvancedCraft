@@ -1,8 +1,10 @@
 package JohnTheAwsome123.mods.AdvancedCraft.block;
 
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import static net.minecraftforge.common.ForgeDirection.EAST;
+import static net.minecraftforge.common.ForgeDirection.NORTH;
+import static net.minecraftforge.common.ForgeDirection.SOUTH;
+import static net.minecraftforge.common.ForgeDirection.WEST;
+
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -13,9 +15,9 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-
-import net.minecraftforge.common.ForgeDirection;
-import static net.minecraftforge.common.ForgeDirection.*;
+import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class blazingTorch extends Block
 {

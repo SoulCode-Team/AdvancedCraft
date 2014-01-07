@@ -2,15 +2,14 @@ package JohnTheAwsome123.mods.AdvancedCraft.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.block.container.*;
-import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.*;
-import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
-import JohnTheAwsome123.mods.AdvancedCraft.util.Localization;
 
 import org.lwjgl.opengl.GL11;
+
+import JohnTheAwsome123.mods.AdvancedCraft.block.container.ContainerCobblestoneGenerator;
+import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityCobblestoneGenerator;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.util.Localization;
 
 
 

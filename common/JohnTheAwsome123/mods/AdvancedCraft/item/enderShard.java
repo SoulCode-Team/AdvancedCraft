@@ -1,8 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft.item;
 
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import net.minecraft.item.Item;
-import net.minecraft.creativetab.CreativeTabs;
+import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 
 public class enderShard extends Item {
 

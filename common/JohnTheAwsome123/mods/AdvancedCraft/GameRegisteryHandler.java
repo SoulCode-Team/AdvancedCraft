@@ -2,7 +2,6 @@ package JohnTheAwsome123.mods.AdvancedCraft;
 
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class GameRegisteryHandler
 {
@@ -20,7 +19,7 @@ public class GameRegisteryHandler
         GameRegistry.registerBlock(AC.netherStarOre, "netherStarOre");
         MinecraftForge.setBlockHarvestLevel(AC.netherStarOre, "pickaxe", 3);
 
-//        GameRegistry.registerBlock(AC.mobCurtain, "mobCurtain");
+        // GameRegistry.registerBlock(AC.mobCurtain, "mobCurtain");
         GameRegistry.registerBlock(AC.nerdPole, "nerdPole");
         GameRegistry.registerBlock(AC.cobblestoneGenerator, "cobblestoneGenerator");
         GameRegistry.registerBlock(AC.LiquidRemove_Holder, "LiquidRemove_Holder");
@@ -87,8 +86,10 @@ public class GameRegisteryHandler
         GameRegistry.registerItem(AC.netherStarQuiver, "netherStarQuiver");
         GameRegistry.registerItem(AC.advancedClock, "advancedClock");
         GameRegistry.registerItem(AC.weathermansCompass, "weathermansCompass");
+        GameRegistry.registerItem(AC.blockPlacer, "blockPlacer");
+        // GameRegistry.registerItem(AC.entityPlacer, "entityPlacer");
 
-        // GameRegistry.registerItem(talismanOfRecollection,
+        // GameRegistry.registerItem(AC.talismanOfRecollection,
         // "talismanOfRecollection");
 
         GameRegistry.registerItem(AC.Sponge, "Sponge");

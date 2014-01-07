@@ -1,9 +1,7 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
 

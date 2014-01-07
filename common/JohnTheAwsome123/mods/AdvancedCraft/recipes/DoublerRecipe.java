@@ -1,13 +1,10 @@
 package JohnTheAwsome123.mods.AdvancedCraft.recipes;
 
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.Config;
 import net.minecraft.inventory.InventoryCrafting;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
-import net.minecraftforge.common.Configuration;
+import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 
 /**
  * AdvancedCraft
@@ -38,14 +35,14 @@ public class DoublerRecipe implements IRecipe
 
             if (checkItem.getItem() == AdvancedCraft.Doubler)
             {
-                countDoubler += 1;
+                countDoubler++;
 
             }
             
             if (checkItem.getItem() != AdvancedCraft.Doubler && checkItem.getItem() != null)
             {
                 doubledItem = checkItem;
-                countItem += 1;
+                countItem++;
             }
             
 
@@ -79,7 +76,7 @@ public class DoublerRecipe implements IRecipe
 
             if (checkItem.getItem() == AdvancedCraft.Doubler)
             {
-                countDoubler += 1;
+                countDoubler++;
 
             }
 

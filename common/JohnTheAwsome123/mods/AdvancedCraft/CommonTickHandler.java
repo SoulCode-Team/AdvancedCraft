@@ -1,7 +1,6 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
 import java.util.EnumSet;
-import java.util.Random;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
@@ -9,9 +8,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 

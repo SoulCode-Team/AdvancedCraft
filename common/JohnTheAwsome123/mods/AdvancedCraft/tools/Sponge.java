@@ -2,10 +2,6 @@ package JohnTheAwsome123.mods.AdvancedCraft.tools;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,9 +10,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
+import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.CommonProxy;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class Sponge extends Item
 {
@@ -39,6 +38,11 @@ public class Sponge extends Item
     {
         MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(par2World, par3EntityPlayer, true);
 
+        if (par3EntityPlayer.isSneaking())
+        {
+            this.setDamage(par1ItemStack, par1ItemStack.getItemDamage() < 1 ? par1ItemStack.getItemDamage() + 1 : 0);
+        }
+
         if (movingobjectposition != null)
         {
             FillBucketEvent event = new FillBucketEvent(par3EntityPlayer, par1ItemStack, par2World, movingobjectposition);
@@ -60,14 +64,28 @@ public class Sponge extends Item
 
                 if (par2World.getBlockMaterial(i, j, k) == Material.water && par2World.getBlockMetadata(i, j, k) == 0)
                 {
-//                    par2World.setBlock(i, j, k, AdvancedCraft.LiquidRemove_Holder.blockID);
-                    par2World.setBlockToAir(i, j, k);
+                    switch (par1ItemStack.getItemDamage())
+                    {
+                        case 0:
+                            par2World.setBlockToAir(i, j, k);
+                            break;
+                        case 1:
+                            par2World.setBlock(i, j, k, AdvancedCraft.LiquidRemove_Holder.blockID);
+                            break;
+                    }
                 }
 
                 if (par2World.getBlockMaterial(i, j, k) == Material.lava && par2World.getBlockMetadata(i, j, k) == 0)
                 {
-//                    par2World.setBlock(i, j, k, AdvancedCraft.LiquidRemove_Holder.blockID);
-                    par2World.setBlockToAir(i, j, k);
+                    switch (par1ItemStack.getItemDamage())
+                    {
+                        case 0:
+                            par2World.setBlockToAir(i, j, k);
+                            break;
+                        case 1:
+                            par2World.setBlock(i, j, k, AdvancedCraft.LiquidRemove_Holder.blockID);
+                            break;
+                    }
                 }
             }
 
@@ -78,6 +96,24 @@ public class Sponge extends Item
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
     {
-        list.add("Soaks up a lot of liquid.");
+        list.add("Soaks up a lot of fluid.");
+        switch (stack.getItemDamage())
+        {
+            case 0:
+                list.add("Mode: Air");
+                break;
+            case 1:
+                list.add("Mode: Replace");
+                break;
+        }
+        if (CommonProxy.shouldAddAdditionalInfo())
+        {
+            list.add("Air mode replaces the fluid with air");
+            list.add("Replace mode replaces the fluid with a place holder block");
+        }
+        else
+        {
+            list.add(CommonProxy.additionalInfoInstructions());
+        }
     }
 }

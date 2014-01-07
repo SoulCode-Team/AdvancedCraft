@@ -1,11 +1,11 @@
 package JohnTheAwsome123.mods.AdvancedCraft.block.container;
 
-import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityCobblestoneGenerator;
 
 public class ContainerCobblestoneGenerator extends Container
 {

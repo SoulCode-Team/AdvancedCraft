@@ -1,9 +1,5 @@
 package JohnTheAwsome123.mods.AdvancedCraft.block;
 
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
-import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityAdvancedFurnace_OLD;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -22,6 +18,9 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class advancedFurnace_OLD extends BlockContainer
 {

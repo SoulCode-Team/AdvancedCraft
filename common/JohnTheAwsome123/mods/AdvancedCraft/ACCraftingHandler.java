@@ -2,9 +2,7 @@ package JohnTheAwsome123.mods.AdvancedCraft;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import cpw.mods.fml.common.ICraftingHandler;
 
 public class ACCraftingHandler implements ICraftingHandler

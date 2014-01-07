@@ -1,0 +1,19 @@
+[
+{
+  "modid": "ExtraCraft",
+  "name": "ExtraCraft",
+  "version": "0.0.1",
+  "mcversion": "1.6.2",
+  "description": "Extending Minecraft with extra crafting recipes and tools.",
+  "credits": "Created by JohnTheAwsome123",
+  "logoFile": "",
+  "url": "http://advancedcraftmod.wikispaces.com",
+  "updateUrl": "",
+  "authors": [ "JohnTheAwsome123"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
