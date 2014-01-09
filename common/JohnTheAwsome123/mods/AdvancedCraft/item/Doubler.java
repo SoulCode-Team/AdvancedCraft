@@ -6,8 +6,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -17,7 +17,6 @@ import cpw.mods.fml.relauncher.SideOnly;
  * Doubler
  * @category Item
  * @author JohnTheAwsome123
- * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
  * 
  */
 public class Doubler extends Item
@@ -27,7 +26,7 @@ public class Doubler extends Item
     {
         super(par1);
         this.setMaxStackSize(1);
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setUnlocalizedName("Doubler");
     }
     

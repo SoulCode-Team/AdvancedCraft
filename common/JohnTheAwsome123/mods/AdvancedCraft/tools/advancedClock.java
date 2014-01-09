@@ -11,7 +11,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,7 +25,7 @@ public class advancedClock extends Item
     {
         super(par1);
         this.setMaxStackSize(1);
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setUnlocalizedName("advancedClock");
         this.setHasSubtypes(true);
         this.setMaxDamage(0);

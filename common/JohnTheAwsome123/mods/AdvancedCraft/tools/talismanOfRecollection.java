@@ -6,8 +6,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -29,7 +29,7 @@ public class talismanOfRecollection extends Item
     {
         super(par1);
         this.setMaxStackSize(1);
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setUnlocalizedName("talismanOfRecollection");
         // this.setFuelTickTime(Item.redstone.itemID, 20);
         // this.setFuelTickTime(Item.glowstone.itemID, 30);

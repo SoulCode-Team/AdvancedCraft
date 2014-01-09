@@ -10,6 +10,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -21,7 +22,7 @@ public class netherStarOre extends Block
                 super(id, par2material);
                 this.setUnlocalizedName("netherStar_Ore");
                 this.setCreativeTab(CreativeTabs.tabBlock);
-                this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+                this.setCreativeTab(Reference.ACTAB);
                 this.setHardness(4.0F);
                 this.setLightValue(0.2F);
                 this.setStepSound(Block.soundStoneFootstep);

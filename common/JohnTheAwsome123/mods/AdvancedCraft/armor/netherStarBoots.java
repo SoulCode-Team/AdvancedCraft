@@ -15,8 +15,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,7 +26,7 @@ public class netherStarBoots extends ItemArmor {
 			int par3, int par4) {
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		this.setUnlocalizedName("netherStar_Boots");
-		this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+		this.setCreativeTab(Reference.ACTAB);
 	}
 
 	@SideOnly(Side.CLIENT)

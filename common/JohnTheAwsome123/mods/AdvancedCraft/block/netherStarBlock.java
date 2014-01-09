@@ -3,8 +3,8 @@ package JohnTheAwsome123.mods.AdvancedCraft.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -15,7 +15,7 @@ public class netherStarBlock extends Block
     {
         super(par1, par2Material);
         this.setUnlocalizedName("netherStar_Block");
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setHardness(5.0F);
         this.setResistance(5000.0F);
         this.setLightValue(1.0F);

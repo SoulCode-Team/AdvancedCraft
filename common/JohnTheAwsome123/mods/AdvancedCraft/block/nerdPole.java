@@ -7,8 +7,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 
 public class nerdPole extends Block
 {
@@ -16,7 +16,7 @@ public class nerdPole extends Block
     {
         super(par1, par2Material);
         this.setUnlocalizedName("nerdPole");
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setHardness(2.0F);
         this.setStepSound(Block.soundStoneFootstep);
     }

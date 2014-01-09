@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -20,7 +20,7 @@ public class cookieDough extends ItemFood
     public cookieDough(int par1, int hungerFill, float saturation, boolean wolvesFood)
     {
         super(par1, hungerFill, saturation, wolvesFood);
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setUnlocalizedName("cookieDough");
         this.setMaxStackSize(64);
     }

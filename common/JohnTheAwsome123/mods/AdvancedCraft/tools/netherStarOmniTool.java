@@ -6,8 +6,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
-import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -17,7 +17,7 @@ public class netherStarOmniTool extends ItemTool
     public netherStarOmniTool(int par1, EnumToolMaterial par3EnumToolMaterial)
     {
         super(par1, 3.0F, par3EnumToolMaterial, blocksEffectiveAgainst);
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setUnlocalizedName("netherStar_OmniTool");
     }
     public boolean canHarvestBlock(Block par1Block)

@@ -1,4 +1,4 @@
-package JohnTheAwsome123.mods.AdvancedCraft;
+package JohnTheAwsome123.mods.AdvancedCraft.util;
 
 import java.util.Collection;
 import java.util.Collections;

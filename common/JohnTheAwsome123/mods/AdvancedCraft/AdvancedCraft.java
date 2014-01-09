@@ -31,7 +31,6 @@ import JohnTheAwsome123.mods.AdvancedCraft.recipes.DoublerRecipe;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.Sponge;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.advancedClock;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.blockPlacer;
-import JohnTheAwsome123.mods.AdvancedCraft.tools.entityPlacer;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarAxe;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarBow;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarHoe;
@@ -42,6 +41,7 @@ import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarShovel;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarSword;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.suitOfArmorBase;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.weathermansCompass;
+import JohnTheAwsome123.mods.AdvancedCraft.util.removeVanillaRecipe;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -51,15 +51,21 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = Reference.MOD_NAME, version = "0.0.1", useMetadata = false, modid = Reference.MOD_ID, acceptedMinecraftVersions = "[1.6,1.7)", dependencies = "required-after:Forge@[9.10.0.800,)")
+@Mod(name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, useMetadata = false, modid = Reference.MOD_ID, acceptedMinecraftVersions = "[1.6,1.7)", dependencies = "required-after:Forge@[9.10.0.800,)")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class AdvancedCraft
 {
+	// The instance of your mod that Forge uses.
+    @Instance(Reference.MOD_ID)
+    public static AdvancedCraft instance;
 
+    // Says where the client and server 'proxy' code is loaded.
+    @SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_COMMON)
+    public static CommonProxy proxy;
+    
     public static CreativeTabs tabAdvancedCraft = new CreativeTabs("tabAdvancedCraft")
     {
         public ItemStack getIconItemStack()
@@ -127,22 +133,15 @@ public class AdvancedCraft
     public static Item netherStarLeggings;
     public static Item netherStarBoots;
 
-    // The instance of your mod that Forge uses.
-    @Instance("AdvancedCraft")
-    public static AdvancedCraft instance;
-
-    // Says where the client and server 'proxy' code is loaded.
-    @SidedProxy(clientSide = "JohnTheAwsome123.mods.AdvancedCraft.client.ClientProxy", serverSide = "JohnTheAwsome123.mods.AdvancedCraft.CommonProxy")
-    public static CommonProxy proxy;
+    
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        System.out.println("Loading AdvancedCraft");
+        System.out.println("Loading " + Reference.MOD_NAME);
         // Stub Method
         proxy.registerRenderers();
 
-        LanguageRegistry.instance().addStringLocalization("itemGroup.tabAdvancedCraft", "en_US", "AdvancedCraft");
 
         // Set up Config File//
         config = new Config(new Configuration(event.getSuggestedConfigurationFile()));
@@ -191,8 +190,8 @@ public class AdvancedCraft
         // talismanOfRecollection(config.talismanOfRecollectionID); TODO work on
         // taliisman of recollection
         Sponge = new Sponge(Config.SpongeID);
-        blockPlacer = new blockPlacer(20000);
-        entityPlacer = new entityPlacer(21000);
+        blockPlacer = new blockPlacer(Config.blockPlacerID);
+//        entityPlacer = new entityPlacer(21000);
 
         // Set Up Suit Of Armor//
         suitOfArmor_NetherStar = new suitOfArmorBase(Config.suitOfArmor_NetherStarID, new ItemStack[] { new ItemStack(AdvancedCraft.netherStarBoots), new ItemStack(AdvancedCraft.netherStarLeggings), new ItemStack(AdvancedCraft.netherStarChestplate), new ItemStack(AdvancedCraft.netherStarHelmet), new ItemStack(AdvancedCraft.netherStarSword) }).setUnlocalizedName("suitOfArmor_NetherStar");
@@ -250,7 +249,7 @@ public class AdvancedCraft
         if (ModCompatability.isBuildCraftLoaded())
         {
         	System.out.println("Loading BuildCraft Advanced Gear Recipes.");
-            RecipeAdder.craftingBC();
+//            RecipeAdder.craftingBC();
         }
     }
 

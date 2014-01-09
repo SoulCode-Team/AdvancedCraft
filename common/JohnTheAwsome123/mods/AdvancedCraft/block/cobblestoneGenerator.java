@@ -14,6 +14,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -24,7 +25,7 @@ public class cobblestoneGenerator extends BlockContainer
     {
         super(par1, par2Material);
         this.setUnlocalizedName("cobblestoneGenerator");
-        this.setCreativeTab(AdvancedCraft.tabAdvancedCraft);
+        this.setCreativeTab(Reference.ACTAB);
         this.setHardness(5.0F);
         this.setStepSound(Block.soundStoneFootstep);
     }

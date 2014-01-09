@@ -85,6 +85,11 @@ public class LanguageRegisteryHandler
         LanguageRegistry.addName(AC.suitOfArmor_Gold, "Gold Suit Of Armor");
     }
     
+    public static void registerTabs()
+    {
+    	LanguageRegistry.instance().addStringLocalization("itemGroup.tabAdvancedCraft", "en_US", "AdvancedCraft");
+    }
+    
     public static void registerAll()
     {
         registerArmor();
@@ -92,6 +97,8 @@ public class LanguageRegisteryHandler
         registerFood();
         registerItems();
         registerSuitOfArmor();
+        registerTabs();
         registerTools();
+        
     }
 }

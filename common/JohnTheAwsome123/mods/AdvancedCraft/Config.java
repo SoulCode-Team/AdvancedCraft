@@ -11,7 +11,7 @@ import net.minecraftforge.common.EnumHelper;
  * Config
  * @category Configuration
  * @author JohnTheAwsome123
- * @license GNU Public License v3 (http://www.gnu.org/licenses/gpl.html)
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
  */
 public class Config
@@ -49,6 +49,7 @@ public class Config
     public static int weathermansCompassID;
     public static int talismanOfRecollectionID;
     public static int SpongeID;
+    public static int blockPlacerID;
     
     
     //Define Suits of armor//
@@ -104,10 +105,10 @@ public class Config
         config.load();
         
      // Cofigs for armor//
-        netherStarHelmetID = config.get("Item", "Nether Star Helmet", startItemID + ItemIncr).getInt();         ItemIncr += 1;
-        netherStarChestplateID = config.get("Item", "Nether Star Chestplate", startItemID + ItemIncr).getInt(); ItemIncr += 1;
-        netherStarLeggingsID = config.get("Item", "Nether Star Leggings", startItemID + ItemIncr).getInt();     ItemIncr += 1;
-        netherStarBootsID = config.get("Item", "Nether Star Boots", startItemID + ItemIncr).getInt();           ItemIncr += 1;
+        netherStarHelmetID = config.get("Item", "Nether Star Helmet", startItemID + ItemIncr++).getInt();
+        netherStarChestplateID = config.get("Item", "Nether Star Chestplate", startItemID + ItemIncr++).getInt();
+        netherStarLeggingsID = config.get("Item", "Nether Star Leggings", startItemID + ItemIncr++).getInt();
+        netherStarBootsID = config.get("Item", "Nether Star Boots", startItemID + ItemIncr++).getInt();
 
         disableNetherStarHelmet = config.get("Options", "disable Nether Star Helmet", false).getBoolean(false);
         disableNetherStarChestplate = config.get("Options", "disable Nether Star Chestplate", false).getBoolean(false);
@@ -115,49 +116,50 @@ public class Config
         disableNetherStarBoots = config.get("Options", "disable Nether Star Boots", false).getBoolean(false);
 
         // Configs for Items//
-        netherStarShardID = config.get("Item", "Nether Star Shard", startItemID + ItemIncr).getInt();           ItemIncr += 1;
-        netherStarNuggetID = config.get("Item", "Nether Star Nugget", startItemID + ItemIncr).getInt();         ItemIncr += 1;
-        enderHeartID = config.get("Item", "Ender Heart", startItemID + ItemIncr).getInt();                      ItemIncr += 1;
-        DoublerID = config.get("Item", "Doubler", startItemID + ItemIncr).getInt();                             ItemIncr += 1;
+        netherStarShardID = config.get("Item", "Nether Star Shard", startItemID + ItemIncr++).getInt();
+        netherStarNuggetID = config.get("Item", "Nether Star Nugget", startItemID + ItemIncr++).getInt();
+        enderHeartID = config.get("Item", "Ender Heart", startItemID + ItemIncr++).getInt();
+        DoublerID = config.get("Item", "Doubler", startItemID + ItemIncr++).getInt();
         
         disableDragonEgg = config.get("Options", "disable Dragon Egg crafting", false).getBoolean(false);
 
         // Configs for Food//
-        sugarCookieID = config.get("Item", "Sugar Cookie", startItemID + ItemIncr).getInt();                    ItemIncr += 1;
-        sugarCookieDoughID = config.get("Item", "Sugar Cookie Dough", startItemID + ItemIncr).getInt();         ItemIncr += 1;
-        cookieDoughID = config.get("Item", "Cookie Dough", startItemID + ItemIncr).getInt();                    ItemIncr += 1;
+        sugarCookieID = config.get("Item", "Sugar Cookie", startItemID + ItemIncr++).getInt();
+        sugarCookieDoughID = config.get("Item", "Sugar Cookie Dough", startItemID + ItemIncr++).getInt();
+        cookieDoughID = config.get("Item", "Cookie Dough", startItemID + ItemIncr++).getInt();
 
         disableAlternateCookie = config.get("Options", "disable alternate cookie recipes", false).getBoolean(false);
 
         // Configs for Tools//
-        netherStarSwordID = config.get("Item", "Nether Star Sword", startItemID + ItemIncr).getInt();           ItemIncr += 1;
-        netherStarShovelID = config.get("Item", "Nether Star Shovel", startItemID + ItemIncr).getInt();         ItemIncr += 1;
-        netherStarPickaxeID = config.get("Item", "Nether Star Pickaxe", startItemID + ItemIncr).getInt();       ItemIncr += 1;
-        netherStarAxeID = config.get("Item", "Nether Star Axe", startItemID + ItemIncr).getInt();               ItemIncr += 1;
-        netherStarHoeID = config.get("Item", "Nether Star Hoe", startItemID + ItemIncr).getInt();               ItemIncr += 1;
-        netherStarOmniToolID = config.get("Item", "Nether Star Omni Tool", startItemID + ItemIncr).getInt();    ItemIncr += 1;
-        netherStarBowID = config.get("Item", "Nether Star Bow", startItemID + ItemIncr).getInt();               ItemIncr += 1;
-        netherStarQuiverID = config.get("Item", "Nether Star Quiver", startItemID + ItemIncr).getInt();         ItemIncr += 1;
-        advancedClockID = config.get("Item", "Advanced Clock", startItemID + ItemIncr).getInt();                ItemIncr += 1;
-        weathermansCompassID = config.get("Item", "Weatherman's Clock", startItemID + ItemIncr).getInt();       ItemIncr += 1;
-//        talismanOfRecollectionID = config.get("Item", "Talisman Of Recollection", startItemID + ItemIncr).getInt(); ItemIncr += 1;
-        SpongeID = config.get("Item", "Sponge", startItemID + ItemIncr).getInt();                               ItemIncr += 1;
+        netherStarSwordID = config.get("Item", "Nether Star Sword", startItemID + ItemIncr++).getInt();
+        netherStarShovelID = config.get("Item", "Nether Star Shovel", startItemID + ItemIncr++).getInt();
+        netherStarPickaxeID = config.get("Item", "Nether Star Pickaxe", startItemID + ItemIncr++).getInt();
+        netherStarAxeID = config.get("Item", "Nether Star Axe", startItemID + ItemIncr++).getInt();
+        netherStarHoeID = config.get("Item", "Nether Star Hoe", startItemID + ItemIncr++).getInt();
+        netherStarOmniToolID = config.get("Item", "Nether Star Omni Tool", startItemID + ItemIncr++).getInt();
+        netherStarBowID = config.get("Item", "Nether Star Bow", startItemID + ItemIncr++).getInt();
+        netherStarQuiverID = config.get("Item", "Nether Star Quiver", startItemID + ItemIncr++).getInt();
+        advancedClockID = config.get("Item", "Advanced Clock", startItemID + ItemIncr++).getInt();
+        weathermansCompassID = config.get("Item", "Weatherman's Clock", startItemID + ItemIncr++).getInt();
+//        talismanOfRecollectionID = config.get("Item", "Talisman Of Recollection", startItemID + ItemIncr++).getInt();
+        SpongeID = config.get("Item", "Sponge", startItemID + ItemIncr++).getInt();
+        blockPlacerID = config.get("Item", "Block Placer", startItemID + ItemIncr++).getInt();
 
         // Configs for suits of armor//
-        suitOfArmor_NetherStarID = config.get("Item", "Suit Of Armor - Nether Star", startItemID + ItemIncr).getInt();  ItemIncr += 1;
-        suitOfArmor_DiamondID = config.get("Item", "Suit Of Armor - Diamond", startItemID + ItemIncr).getInt(); ItemIncr += 1;
-        suitOfArmor_IronID = config.get("Item", "Suit Of Armor - Iron", startItemID + ItemIncr).getInt();       ItemIncr += 1;
-        suitOfArmor_GoldID = config.get("Item", "Suit Of Armor - Gold", startItemID + ItemIncr).getInt();       ItemIncr += 1;
+        suitOfArmor_NetherStarID = config.get("Item", "Suit Of Armor - Nether Star", startItemID + ItemIncr++).getInt();
+        suitOfArmor_DiamondID = config.get("Item", "Suit Of Armor - Diamond", startItemID + ItemIncr++).getInt();
+        suitOfArmor_IronID = config.get("Item", "Suit Of Armor - Iron", startItemID + ItemIncr++).getInt();
+        suitOfArmor_GoldID = config.get("Item", "Suit Of Armor - Gold", startItemID + ItemIncr++).getInt();
 
         // Configs for Blocks//
-        netherStarBlockID = config.get("Block", "Nether Star Block", startBlockID + BlockIncr).getInt();        BlockIncr += 1;
-        netherStarOreID = config.get("Block", "Nether Star Ore", startBlockID + BlockIncr).getInt();            BlockIncr += 1;
-        advancedFurnaceIdleID = config.get("Block", "Advanced Furnace (Idle)", startBlockID + BlockIncr).getInt();  BlockIncr += 1;
-        advancedFurnaceActiveID = config.get("Block", "Advanced Furnace (Active)", startBlockID + BlockIncr).getInt();  BlockIncr += 1;
-        mobCurtainID = config.get("Block", "Mob Curtain", startBlockID + BlockIncr).getInt();                   BlockIncr += 1;
-        cobblestoneGeneratorID = config.get("Block", "Cobblestone Generator", startBlockID + BlockIncr).getInt();   BlockIncr += 1;
-        nerdPoleID = config.get("Block", "Nerd Pole", startBlockID + BlockIncr).getInt();                       BlockIncr += 1;
-        LiquidRemove_HolderID = config.get("Block", "Sponge_utility", startBlockID + BlockIncr).getInt();       BlockIncr += 1;
+        netherStarBlockID = config.get("Block", "Nether Star Block", startBlockID + BlockIncr++).getInt();
+        netherStarOreID = config.get("Block", "Nether Star Ore", startBlockID + BlockIncr++).getInt();
+        advancedFurnaceIdleID = config.get("Block", "Advanced Furnace (Idle)", startBlockID + BlockIncr++).getInt();
+        advancedFurnaceActiveID = config.get("Block", "Advanced Furnace (Active)", startBlockID + BlockIncr++).getInt();
+        mobCurtainID = config.get("Block", "Mob Curtain", startBlockID + BlockIncr++).getInt();
+        cobblestoneGeneratorID = config.get("Block", "Cobblestone Generator", startBlockID + BlockIncr++).getInt();
+        nerdPoleID = config.get("Block", "Nerd Pole", startBlockID + BlockIncr++).getInt();
+        LiquidRemove_HolderID = config.get("Block", "Sponge_utility", startBlockID + BlockIncr++).getInt();
 
         // Configs for fuels//
         disableFuels = config.get("Options", "disable alternate smelting fuels", false).getBoolean(false);

@@ -110,17 +110,18 @@ public class RecipeAdder
         GameRegistry.addShapelessRecipe(new ItemStack(Item.ingotIron, 8), new ItemStack(Item.ingotGold), new ItemStack(Item.rottenFlesh));
         GameRegistry.addShapelessRecipe(new ItemStack(Item.enderPearl), new ItemStack(Item.ingotIron), new ItemStack(Item.ingotIron), new ItemStack(Item.ingotIron), new ItemStack(Item.ingotIron), new ItemStack(Item.rottenFlesh));
         GameRegistry.addShapelessRecipe(new ItemStack(Item.ingotIron, 4), new ItemStack(Item.enderPearl), new ItemStack(Item.rottenFlesh));
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.blazeRod), new ItemStack(Item.blazePowder), new ItemStack(Item.blazePowder), new ItemStack(Item.rottenFlesh));
     }
 
     public static void craftingBC()
     {
         //Gears//
-        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.stoneGearItem), "tst", "s s", "tst", 't', new ItemStack(Block.cobblestone), 's', new ItemStack(Item.stick));
-        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.ironGearItem), "isi", "sgs", "isi", 'i', new ItemStack(Item.ingotIron), 's', new ItemStack(Block.cobblestone), 'g', new ItemStack(buildcraft.BuildCraftCore.woodenGearItem));
-        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.goldGearItem), "isi", "sgs", "isi", 's', new ItemStack(Item.ingotIron), 'i', new ItemStack(Item.ingotGold), 'g', new ItemStack(buildcraft.BuildCraftCore.stoneGearItem));
-        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.diamondGearItem), "did", "igi", "did", 'd', new ItemStack(Item.diamond), 'i', new ItemStack(Item.ingotGold), 'g', new ItemStack(buildcraft.BuildCraftCore.ironGearItem));
-        //Blocks//
-        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftBuilders.markerBlock), " l ", " r ", " s ", 'l', new ItemStack(Item.dyePowder, 1, 4), 'r', new ItemStack(Item.redstone), 's', new ItemStack(Item.stick));
+//        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.stoneGearItem), "tst", "s s", "tst", 't', new ItemStack(Block.cobblestone), 's', new ItemStack(Item.stick));
+//        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.ironGearItem), "isi", "sgs", "isi", 'i', new ItemStack(Item.ingotIron), 's', new ItemStack(Block.cobblestone), 'g', new ItemStack(buildcraft.BuildCraftCore.woodenGearItem));
+//        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.goldGearItem), "isi", "sgs", "isi", 's', new ItemStack(Item.ingotIron), 'i', new ItemStack(Item.ingotGold), 'g', new ItemStack(buildcraft.BuildCraftCore.stoneGearItem));
+//        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftCore.diamondGearItem), "did", "igi", "did", 'd', new ItemStack(Item.diamond), 'i', new ItemStack(Item.ingotGold), 'g', new ItemStack(buildcraft.BuildCraftCore.ironGearItem));
+//        //Blocks//
+//        GameRegistry.addRecipe(new ItemStack(buildcraft.BuildCraftBuilders.markerBlock), " l ", " r ", " s ", 'l', new ItemStack(Item.dyePowder, 1, 4), 'r', new ItemStack(Item.redstone), 's', new ItemStack(Item.stick));
     }
 
     public static void smeltingAll()
