@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 import JohnTheAwsome123.mods.AdvancedCraft.block.container.ContainerCobblestoneGenerator;
 import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityCobblestoneGenerator;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.ACTextures;
-import JohnTheAwsome123.mods.AdvancedCraft.util.Localization;
 
 
 
@@ -28,7 +27,7 @@ public class GUICobblestoneGenerator extends GuiContainer
     protected void drawGuiContainerForegroundLayer(int x, int y)
     {
 
-        String containerName = tileEntity.isInvNameLocalized() ? tileEntity.getInvName() : Localization.get(tileEntity.getInvName());
+        String containerName = tileEntity.getInvName();
         fontRenderer.drawString(containerName, xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 6, 4210752);
         fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
     }

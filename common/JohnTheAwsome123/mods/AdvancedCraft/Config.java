@@ -5,11 +5,9 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
 
-/**
- * AdvancedCraft
+/**Config
+ * @mod AdvancedCraft
  * 
- * Config
- * @category Configuration
  * @author JohnTheAwsome123
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
@@ -20,6 +18,9 @@ public class Config
     public int BlockIncr = 0;
     public int startItemID = 2700;
     public int ItemIncr = 0;
+    
+    //Define Options//
+    public static int validDistance;
     
     
     // Define Items//
@@ -50,6 +51,7 @@ public class Config
     public static int talismanOfRecollectionID;
     public static int SpongeID;
     public static int blockPlacerID;
+    public static int controlPanelID;
     
     
     //Define Suits of armor//
@@ -67,6 +69,7 @@ public class Config
     public static int advancedFurnaceActiveID;
     public static int mobCurtainID;
     public static int LiquidRemove_HolderID;
+    public static int RemoteInterfaceID;
 
 
     // Define Armor Material
@@ -144,6 +147,7 @@ public class Config
 //        talismanOfRecollectionID = config.get("Item", "Talisman Of Recollection", startItemID + ItemIncr++).getInt();
         SpongeID = config.get("Item", "Sponge", startItemID + ItemIncr++).getInt();
         blockPlacerID = config.get("Item", "Block Placer", startItemID + ItemIncr++).getInt();
+        controlPanelID = config.get("Item", "Control Panel", startItemID + ItemIncr++).getInt();
 
         // Configs for suits of armor//
         suitOfArmor_NetherStarID = config.get("Item", "Suit Of Armor - Nether Star", startItemID + ItemIncr++).getInt();
@@ -160,6 +164,7 @@ public class Config
         cobblestoneGeneratorID = config.get("Block", "Cobblestone Generator", startBlockID + BlockIncr++).getInt();
         nerdPoleID = config.get("Block", "Nerd Pole", startBlockID + BlockIncr++).getInt();
         LiquidRemove_HolderID = config.get("Block", "Sponge_utility", startBlockID + BlockIncr++).getInt();
+        RemoteInterfaceID = config.get("Block", "Remote Interface", startBlockID + BlockIncr++).getInt();
 
         // Configs for fuels//
         disableFuels = config.get("Options", "disable alternate smelting fuels", false).getBoolean(false);
@@ -168,6 +173,8 @@ public class Config
         disableDoubler = config.get("Options", "disable item Doubler", false).getBoolean(false);
         disableAdvancedDoubler = config.get("Options", "disable item Doubler NBT Copy (does not disable doubler completely)", false).getBoolean(false);
         
+        //Config for Options//
+        validDistance = config.get("Options", "Max Remote Interface Distance", 16).getInt(16);
         
         if (config.hasChanged())
         {

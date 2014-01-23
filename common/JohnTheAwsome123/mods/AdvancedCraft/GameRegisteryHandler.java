@@ -1,6 +1,8 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
 import net.minecraftforge.common.MinecraftForge;
+import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityCobblestoneGenerator;
+import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityRemoteInterface;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GameRegisteryHandler
@@ -23,6 +25,7 @@ public class GameRegisteryHandler
         GameRegistry.registerBlock(AC.nerdPole, "nerdPole");
         GameRegistry.registerBlock(AC.cobblestoneGenerator, "cobblestoneGenerator");
         GameRegistry.registerBlock(AC.LiquidRemove_Holder, "LiquidRemove_Holder");
+        GameRegistry.registerBlock(AC.RemoteInterface, "RemoteInterface");
 
         // GameRegistry.registerBlock(advancedFurnaceIdle,
         // "advancedFurnaceIdle");
@@ -93,6 +96,7 @@ public class GameRegisteryHandler
         // "talismanOfRecollection");
 
         GameRegistry.registerItem(AC.Sponge, "Sponge");
+        GameRegistry.registerItem(AC.controlPanel, "controlPanel");
 
     }
 
@@ -104,6 +108,12 @@ public class GameRegisteryHandler
         GameRegistry.registerItem(AC.suitOfArmor_Iron, "suitOfArmor_Iron");
         GameRegistry.registerItem(AC.suitOfArmor_Gold, "suitOfArmor_Gold");
     }
+    
+    public static void registerTileEntities()
+    {
+    	GameRegistry.registerTileEntity(TileEntityRemoteInterface.class, "RemoteInterface");
+    	GameRegistry.registerTileEntity(TileEntityCobblestoneGenerator.class, "CobblestoneGenerator");
+    }
 
     public static void registerAll()
     {
@@ -114,5 +124,6 @@ public class GameRegisteryHandler
         registerItems();
         registerSuitOfArmor();
         registerTools();
+        registerTileEntities();
     }
 }

@@ -14,6 +14,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import JohnTheAwsome123.mods.AdvancedCraft.AdvancedCraft;
+import JohnTheAwsome123.mods.AdvancedCraft.block.tileentity.TileEntityCobblestoneGenerator;
+import JohnTheAwsome123.mods.AdvancedCraft.lib.ACGuiIDs;
 import JohnTheAwsome123.mods.AdvancedCraft.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -37,15 +39,15 @@ public class cobblestoneGenerator extends BlockContainer
     
     public TileEntity createNewTileEntity(World par1World)
     {
-//        return new TileEntityCobblestoneGenerator();
-        return null;
+        return new TileEntityCobblestoneGenerator();
     }
+    
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int metadata, float what, float these, float are) {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
         if (tileEntity == null || player.isSneaking()) {
             return false;
         }
-        player.openGui(AdvancedCraft.instance, 0, world, x, y, z);
+        player.openGui(AdvancedCraft.instance, ACGuiIDs.ROCKET_ASSEMBLER, world, x, y, z);
         return true;
     }
     

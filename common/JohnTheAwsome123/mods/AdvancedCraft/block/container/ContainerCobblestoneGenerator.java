@@ -16,8 +16,8 @@ public class ContainerCobblestoneGenerator extends Container
 
             //the Slot constructor takes the IInventory and the slot number in that it binds to
             //and the x-y coordinates it resides on-screen
-            for (int i = 0; i < 3; i++) {
-                    for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 1; i++) {
+                    for (int j = 0; j < 1; j++) {
                             addSlotToContainer(new Slot(tileEntity, j + i * 3, 62 + j * 18, 17 + i * 18));
                     }
             }

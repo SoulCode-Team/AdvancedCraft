@@ -35,8 +35,7 @@ public class ACTextures {
 	public static final String RESOURCE_CONTEXT = Reference.MOD_ID;
 
 	// Guis //
-	public static final ResourceLocation GUI_COBBLESTONE_GENERATOR = new ResourceLocation(
-			RESOURCE_CONTEXT, "textures/guis/cobblestone_generator.png");
+	public static final ResourceLocation GUI_COBBLESTONE_GENERATOR = new ResourceLocation(RESOURCE_CONTEXT, "textures/guis/cobblestone_generator.png");
 
 	// Models //
 	// public static final ResourceLocation MODEL_ROCKET = new

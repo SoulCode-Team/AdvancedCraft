@@ -1,7 +1,6 @@
 package JohnTheAwsome123.mods.AdvancedCraft;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
@@ -18,6 +17,7 @@ import JohnTheAwsome123.mods.AdvancedCraft.block.cobblestoneGenerator;
 import JohnTheAwsome123.mods.AdvancedCraft.block.nerdPole;
 import JohnTheAwsome123.mods.AdvancedCraft.block.netherStarBlock;
 import JohnTheAwsome123.mods.AdvancedCraft.block.netherStarOre;
+import JohnTheAwsome123.mods.AdvancedCraft.block.remoteInterface;
 import JohnTheAwsome123.mods.AdvancedCraft.food.cookieDough;
 import JohnTheAwsome123.mods.AdvancedCraft.food.sugarCookie;
 import JohnTheAwsome123.mods.AdvancedCraft.food.sugarCookieDough;
@@ -31,6 +31,7 @@ import JohnTheAwsome123.mods.AdvancedCraft.recipes.DoublerRecipe;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.Sponge;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.advancedClock;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.blockPlacer;
+import JohnTheAwsome123.mods.AdvancedCraft.tools.controlPanel;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarAxe;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarBow;
 import JohnTheAwsome123.mods.AdvancedCraft.tools.netherStarHoe;
@@ -59,210 +60,217 @@ import cpw.mods.fml.relauncher.Side;
 public class AdvancedCraft
 {
 	// The instance of your mod that Forge uses.
-    @Instance(Reference.MOD_ID)
-    public static AdvancedCraft instance;
+	@Instance(Reference.MOD_ID)
+	public static AdvancedCraft instance;
 
-    // Says where the client and server 'proxy' code is loaded.
-    @SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_COMMON)
-    public static CommonProxy proxy;
-    
-    public static CreativeTabs tabAdvancedCraft = new CreativeTabs("tabAdvancedCraft")
-    {
-        public ItemStack getIconItemStack()
-        {
-            return new ItemStack(Block.workbench);
-        }
-    };
+	// Says where the client and server 'proxy' code is loaded.
+	@SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_COMMON)
+	public static CommonProxy proxy;
 
-    // Define Config//
-    public static Config config;
+	public static CreativeTabs tabAdvancedCraft = new CreativeTabs("tabAdvancedCraft")
+	{
+		public ItemStack getIconItemStack()
+		{
+			return new ItemStack(Block.workbench);
+		}
+	};
 
-    // Define Items//
-    public static Item enderHeart;
-    public static Item netherStarNugget;
-    public static Item netherStarShard;
-    public static Item universalItem;
-    public static Item Doubler;
+	// Define Config//
+	public static Config config;
 
-    // Define Food//
-    public static Item sugarCookie;
-    public static Item sugarCookieDough;
-    public static Item cookieDough;
+	// Define Items//
+	public static Item enderHeart;
+	public static Item netherStarNugget;
+	public static Item netherStarShard;
+	public static Item universalItem;
+	public static Item Doubler;
 
-    // Define Tool Material
-    public static EnumToolMaterial netherStarTool = EnumHelper.addToolMaterial("netherStar", 4, 1024, 10.0F, 4.0F, 30);
+	// Define Food//
+	public static Item sugarCookie;
+	public static Item sugarCookieDough;
+	public static Item cookieDough;
 
-    // Define Tools//
-    public static Item netherStarPickaxe;
-    public static Item netherStarAxe;
-    public static Item netherStarShovel;
-    public static Item netherStarSword;
-    public static Item netherStarHoe;
-    public static Item netherStarOmniTool;
-    public static Item netherStarBow;
-    public static Item netherStarQuiver;
-    public static Item advancedClock;
-    public static Item weathermansCompass;
-    public static Item talismanOfRecollection;
-    public static Item Sponge;
-    public static Item blockPlacer;
-    public static Item entityPlacer;
+	// Define Tool Material
+	public static EnumToolMaterial netherStarTool = EnumHelper.addToolMaterial("netherStar", 4, 1024, 10.0F, 4.0F, 30);
 
-    // Define Suits of armor//
-    public static Item suitOfArmor_NetherStar;
-    public static Item suitOfArmor_Diamond;
-    public static Item suitOfArmor_Iron;
-    public static Item suitOfArmor_Gold;
+	// Define Tools//
+	public static Item netherStarPickaxe;
+	public static Item netherStarAxe;
+	public static Item netherStarShovel;
+	public static Item netherStarSword;
+	public static Item netherStarHoe;
+	public static Item netherStarOmniTool;
+	public static Item netherStarBow;
+	public static Item netherStarQuiver;
+	public static Item advancedClock;
+	public static Item weathermansCompass;
+	public static Item talismanOfRecollection;
+	public static Item Sponge;
+	public static Item blockPlacer;
+	public static Item entityPlacer;
+	public static Item controlPanel;
 
-    // Define Blocks//
-    public static Block netherStarBlock;
-    public static Block netherStarOre;
-    public static Block cobblestoneGenerator;
-    public static Block nerdPole;
-    public static Block advancedFurnaceIdle;
-    public static Block advancedFurnaceActive;
-    public static Block mobCurtain;
-    public static Block LiquidRemove_Holder;
+	// Define Suits of armor//
+	public static Item suitOfArmor_NetherStar;
+	public static Item suitOfArmor_Diamond;
+	public static Item suitOfArmor_Iron;
+	public static Item suitOfArmor_Gold;
 
-    // Define Armor Material
-    public static EnumArmorMaterial netherStarArmor = EnumHelper.addArmorMaterial("netherStar", 75, new int[] { 5, 10, 8, 5 }, 30);
+	// Define Blocks//
+	public static Block netherStarBlock;
+	public static Block netherStarOre;
+	public static Block cobblestoneGenerator;
+	public static Block nerdPole;
+	public static Block advancedFurnaceIdle;
+	public static Block advancedFurnaceActive;
+	public static Block mobCurtain;
+	public static Block LiquidRemove_Holder;
+	public static Block RemoteInterface;
 
-    // Define Armor//
-    public static Item netherStarHelmet;
-    public static Item netherStarChestplate;
-    public static Item netherStarLeggings;
-    public static Item netherStarBoots;
+	// Define Armor Material
+	public static EnumArmorMaterial netherStarArmor = EnumHelper.addArmorMaterial("netherStar", 75, new int[] { 5, 10, 8, 5 }, 30);
 
-    
-
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
-        System.out.println("Loading " + Reference.MOD_NAME);
-        // Stub Method
-        proxy.registerRenderers();
+	// Define Armor//
+	public static Item netherStarHelmet;
+	public static Item netherStarChestplate;
+	public static Item netherStarLeggings;
+	public static Item netherStarBoots;
 
 
-        // Set up Config File//
-        config = new Config(new Configuration(event.getSuggestedConfigurationFile()));
 
-        // Remove Vanilla crafting recipes//
-        if (!Config.disableAlternateCookie)
-        {
-            removeVanillaRecipe.remove(Item.cookie);
-        }
-        
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		System.out.println("Loading " + Reference.MOD_NAME);
+		// Stub Method
+		proxy.registerRenderers();
 
-        // Settings for NS Armor
-        // if (!DisableNetherStarHelmet){
-        netherStarHelmet = new netherStarHelmet(Config.netherStarHelmetID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 0);// }
-        netherStarChestplate = new netherStarChestplate(Config.netherStarChestplateID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 1);
-        netherStarLeggings = new netherStarLeggings(Config.netherStarLeggingsID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 2);
-        netherStarBoots = new netherStarBoots(Config.netherStarBootsID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 3);
 
-        // Set up Items//
-        enderHeart = new enderHeart(Config.enderHeartID);
-//        universalItem = new UniversalCraftingItem(5000, 0);
-        netherStarNugget = new netherStarNugget(Config.netherStarNuggetID);
-        netherStarShard = new netherStarShard(Config.netherStarShardID);
-        if (!Config.disableDoubler)
-        {
-            Doubler = new Doubler(Config.DoublerID);
-        }
+		// Set up Config File//
+		config = new Config(new Configuration(event.getSuggestedConfigurationFile()));
 
-        // Set up Food//
-        sugarCookie = new sugarCookie(Config.sugarCookieID, 2, false);
-        sugarCookieDough = new sugarCookieDough(Config.sugarCookieDoughID, 1, 0.1F, false);
-        cookieDough = new cookieDough(Config.cookieDoughID, 1, 0.1F, false);
+		// Remove Vanilla crafting recipes//
+		if (!Config.disableAlternateCookie)
+		{
+			removeVanillaRecipe.remove(Item.cookie);
+		}
 
-        // Set up Tools//
-        netherStarSword = new netherStarSword(Config.netherStarSwordID, netherStarTool);
-        netherStarShovel = new netherStarShovel(Config.netherStarShovelID, netherStarTool);
-        netherStarPickaxe = new netherStarPickaxe(Config.netherStarPickaxeID, netherStarTool);
-        netherStarAxe = new netherStarAxe(Config.netherStarAxeID, netherStarTool);
-        netherStarHoe = new netherStarHoe(Config.netherStarHoeID, netherStarTool);
-        netherStarOmniTool = new netherStarOmniTool(Config.netherStarOmniToolID, netherStarTool);
-        netherStarBow = new netherStarBow(Config.netherStarBowID);
-        netherStarQuiver = new netherStarQuiver(Config.netherStarQuiverID);
-        advancedClock = new advancedClock(Config.advancedClockID);
-        weathermansCompass = new weathermansCompass(Config.weathermansCompassID);
-        // talismanOfRecollection = new
-        // talismanOfRecollection(config.talismanOfRecollectionID); TODO work on
-        // taliisman of recollection
-        Sponge = new Sponge(Config.SpongeID);
-        blockPlacer = new blockPlacer(Config.blockPlacerID);
-//        entityPlacer = new entityPlacer(21000);
 
-        // Set Up Suit Of Armor//
-        suitOfArmor_NetherStar = new suitOfArmorBase(Config.suitOfArmor_NetherStarID, new ItemStack[] { new ItemStack(AdvancedCraft.netherStarBoots), new ItemStack(AdvancedCraft.netherStarLeggings), new ItemStack(AdvancedCraft.netherStarChestplate), new ItemStack(AdvancedCraft.netherStarHelmet), new ItemStack(AdvancedCraft.netherStarSword) }).setUnlocalizedName("suitOfArmor_NetherStar");
-        suitOfArmor_Diamond = new suitOfArmorBase(Config.suitOfArmor_DiamondID, new ItemStack[] { new ItemStack(Item.bootsDiamond), new ItemStack(Item.legsDiamond), new ItemStack(Item.plateDiamond), new ItemStack(Item.helmetDiamond), new ItemStack(Item.swordDiamond) }).setUnlocalizedName("suitOfArmor_Diamond");
-        suitOfArmor_Iron = new suitOfArmorBase(Config.suitOfArmor_IronID, new ItemStack[] { new ItemStack(Item.bootsIron), new ItemStack(Item.legsIron), new ItemStack(Item.plateIron), new ItemStack(Item.helmetIron), new ItemStack(Item.swordIron) }).setUnlocalizedName("suitOfArmor_Iron");
-        suitOfArmor_Gold = new suitOfArmorBase(Config.suitOfArmor_GoldID, new ItemStack[] { new ItemStack(Item.bootsGold), new ItemStack(Item.legsGold), new ItemStack(Item.plateGold), new ItemStack(Item.helmetGold), new ItemStack(Item.swordGold) }).setUnlocalizedName("suitOfArmor_Gold");
+		// Settings for NS Armor
+		// if (!DisableNetherStarHelmet){
+		netherStarHelmet = new netherStarHelmet(Config.netherStarHelmetID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 0);// }
+		netherStarChestplate = new netherStarChestplate(Config.netherStarChestplateID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 1);
+		netherStarLeggings = new netherStarLeggings(Config.netherStarLeggingsID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 2);
+		netherStarBoots = new netherStarBoots(Config.netherStarBootsID, netherStarArmor, RenderingRegistry.addNewArmourRendererPrefix("netherStar"), 3);
 
-        // Set up Blocks//
-        netherStarBlock = new netherStarBlock(Config.netherStarBlockID, Material.iron);
-//        mobCurtain = new mobCurtain(Config.mobCurtainID, Material.grass);
-        netherStarOre = new netherStarOre(Config.netherStarOreID, Material.rock);
-        cobblestoneGenerator = new cobblestoneGenerator(Config.cobblestoneGeneratorID);
-        nerdPole = new nerdPole(Config.nerdPoleID);
-        LiquidRemove_Holder = new LiquidRemoveHolder(Config.LiquidRemove_HolderID);
-        
-        LanguageRegisteryHandler.registerAll();
-        GameRegisteryHandler.registerAll();
-        OreDictionaryHandler.registerAll();
-        
-        
-        // advancedFurnaceIdle = new advancedFurnace(advancedFurnaceIdleID,
-        // false);
-        // advancedFurnaceActive = new advancedFurnace(advancedFurnaceActiveID,
-        // true);
+		// Set up Items//
+		enderHeart = new enderHeart(Config.enderHeartID);
+		//        universalItem = new UniversalCraftingItem(5000, 0);
+		netherStarNugget = new netherStarNugget(Config.netherStarNuggetID);
+		netherStarShard = new netherStarShard(Config.netherStarShardID);
+		if (!Config.disableDoubler)
+		{
+			Doubler = new Doubler(Config.DoublerID);
+		}
 
-        // advancedFurnace = new advancedFurnace(advancedFurnaceID, false);
+		// Set up Food//
+		sugarCookie = new sugarCookie(Config.sugarCookieID, 2, false);
+		sugarCookieDough = new sugarCookieDough(Config.sugarCookieDoughID, 1, 0.1F, false);
+		cookieDough = new cookieDough(Config.cookieDoughID, 1, 0.1F, false);
 
-        // final Item EnderShard = new EnderShard(5000);
-        // final Block blazingTorch = new blazingTorch(5001);
-        // blazingTorch = new
-        // blazingTorch(500).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Blazing Torch").setCreativeTab(CreativeTabs.tabDecorations);
-        // GameRegistry.registerBlock(blazingTorch, "blazingTorch");
-        // LanguageRegistry.addName(blazingTorch, "Blazing Torch");
+		// Set up Tools//
+		netherStarSword = new netherStarSword(Config.netherStarSwordID, netherStarTool);
+		netherStarShovel = new netherStarShovel(Config.netherStarShovelID, netherStarTool);
+		netherStarPickaxe = new netherStarPickaxe(Config.netherStarPickaxeID, netherStarTool);
+		netherStarAxe = new netherStarAxe(Config.netherStarAxeID, netherStarTool);
+		netherStarHoe = new netherStarHoe(Config.netherStarHoeID, netherStarTool);
+		netherStarOmniTool = new netherStarOmniTool(Config.netherStarOmniToolID, netherStarTool);
+		netherStarBow = new netherStarBow(Config.netherStarBowID);
+		netherStarQuiver = new netherStarQuiver(Config.netherStarQuiverID);
+		advancedClock = new advancedClock(Config.advancedClockID);
+		weathermansCompass = new weathermansCompass(Config.weathermansCompassID);
+		// talismanOfRecollection = new
+		// talismanOfRecollection(config.talismanOfRecollectionID); TODO work on
+		// taliisman of recollection
+		Sponge = new Sponge(Config.SpongeID);
+		blockPlacer = new blockPlacer(Config.blockPlacerID);
+		//        entityPlacer = new entityPlacer(21000);
+		controlPanel = new controlPanel(Config.controlPanelID);
 
-        
-        RecipeAdder.craftingAll();
-        RecipeAdder.smeltingAll();
-        
-        
-        // Crafting//
-        // GameRegistry.addRecipe(new ItemStack(Block.commandBlock), "srs",
-        // "rnr", "srs",
-        // 'r', new ItemStack(Item.redstone), 'n', nStarStack, 's', new
-        // ItemStack(Block.stone));
-        // GameRegistry.addShapelessRecipe(new ItemStack(Block.wood), new
-        // ItemStack(Block.planks, 4));
-        
-    }
+		// Set Up Suit Of Armor//
+		suitOfArmor_NetherStar = new suitOfArmorBase(Config.suitOfArmor_NetherStarID, new ItemStack[] { new ItemStack(AdvancedCraft.netherStarBoots), new ItemStack(AdvancedCraft.netherStarLeggings), new ItemStack(AdvancedCraft.netherStarChestplate), new ItemStack(AdvancedCraft.netherStarHelmet), new ItemStack(AdvancedCraft.netherStarSword) }).setUnlocalizedName("suitOfArmor_NetherStar");
+		suitOfArmor_Diamond = new suitOfArmorBase(Config.suitOfArmor_DiamondID, new ItemStack[] { new ItemStack(Item.bootsDiamond), new ItemStack(Item.legsDiamond), new ItemStack(Item.plateDiamond), new ItemStack(Item.helmetDiamond), new ItemStack(Item.swordDiamond) }).setUnlocalizedName("suitOfArmor_Diamond");
+		suitOfArmor_Iron = new suitOfArmorBase(Config.suitOfArmor_IronID, new ItemStack[] { new ItemStack(Item.bootsIron), new ItemStack(Item.legsIron), new ItemStack(Item.plateIron), new ItemStack(Item.helmetIron), new ItemStack(Item.swordIron) }).setUnlocalizedName("suitOfArmor_Iron");
+		suitOfArmor_Gold = new suitOfArmorBase(Config.suitOfArmor_GoldID, new ItemStack[] { new ItemStack(Item.bootsGold), new ItemStack(Item.legsGold), new ItemStack(Item.plateGold), new ItemStack(Item.helmetGold), new ItemStack(Item.swordGold) }).setUnlocalizedName("suitOfArmor_Gold");
 
-    @EventHandler
-    public void Init(FMLPostInitializationEvent event)
-    {
-        TickRegistry.registerTickHandler(new CommonTickHandler(), Side.SERVER);
-        GameRegistry.registerCraftingHandler(new ACCraftingHandler());
-        if (ModCompatability.isBuildCraftLoaded())
-        {
-        	System.out.println("Loading BuildCraft Advanced Gear Recipes.");
-//            RecipeAdder.craftingBC();
-        }
-    }
+		// Set up Blocks//
+		netherStarBlock = new netherStarBlock(Config.netherStarBlockID);
+		//        mobCurtain = new mobCurtain(Config.mobCurtainID, Material.grass);
+		netherStarOre = new netherStarOre(Config.netherStarOreID);
+		cobblestoneGenerator = new cobblestoneGenerator(Config.cobblestoneGeneratorID);
+		nerdPole = new nerdPole(Config.nerdPoleID);
+		LiquidRemove_Holder = new LiquidRemoveHolder(Config.LiquidRemove_HolderID);
+		RemoteInterface = new remoteInterface(Config.RemoteInterfaceID);
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
-        // System.out.println(FluidRegistry.getFluidID(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName()));
-        // System.out.println(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName());
+		OreDictionaryHandler.registerAll();
+		LanguageRegisteryHandler.registerAll();
+		GameRegisteryHandler.registerAll();
+		
 
-        // Recipes for Doubler//
-        if (!config.disableDoubler)
-        {
-                GameRegistry.addRecipe(new DoublerRecipe());
-        }
-    }
+
+		// advancedFurnaceIdle = new advancedFurnace(advancedFurnaceIdleID,
+		// false);
+		// advancedFurnaceActive = new advancedFurnace(advancedFurnaceActiveID,
+		// true);
+
+		// advancedFurnace = new advancedFurnace(advancedFurnaceID, false);
+
+		// final Item EnderShard = new EnderShard(5000);
+		// final Block blazingTorch = new blazingTorch(5001);
+		// blazingTorch = new
+		// blazingTorch(500).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("Blazing Torch").setCreativeTab(CreativeTabs.tabDecorations);
+		// GameRegistry.registerBlock(blazingTorch, "blazingTorch");
+		// LanguageRegistry.addName(blazingTorch, "Blazing Torch");
+
+
+//		RecipeAdder.craftingAll();
+//		RecipeAdder.smeltingAll();
+
+
+		// Crafting//
+		// GameRegistry.addRecipe(new ItemStack(Block.commandBlock), "srs",
+		// "rnr", "srs",
+		// 'r', new ItemStack(Item.redstone), 'n', nStarStack, 's', new
+		// ItemStack(Block.stone));
+		// GameRegistry.addShapelessRecipe(new ItemStack(Block.wood), new
+		// ItemStack(Block.planks, 4));
+
+	}
+
+	@EventHandler
+	public void Init(FMLPostInitializationEvent event)
+	{
+		TickRegistry.registerTickHandler(new CommonTickHandler(), Side.SERVER);
+		GameRegistry.registerCraftingHandler(new ACCraftingHandler());
+		if (ModCompatability.isBuildCraftLoaded())
+		{
+			System.out.println("Loading BuildCraft Advanced Gear Recipes.");
+			//            RecipeAdder.craftingBC();
+		}
+		RecipeAdder.craftingAll();
+		RecipeAdder.smeltingAll();
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		// System.out.println(FluidRegistry.getFluidID(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName()));
+		// System.out.println(FluidRegistry.lookupFluidForBlock(Block.waterStill).getName());
+
+		// Recipes for Doubler//
+		if (!config.disableDoubler)
+		{
+			GameRegistry.addRecipe(new DoublerRecipe());
+		}
+	}
 }

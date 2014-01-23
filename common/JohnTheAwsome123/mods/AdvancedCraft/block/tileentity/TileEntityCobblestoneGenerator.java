@@ -13,9 +13,6 @@ public class TileEntityCobblestoneGenerator extends TileEntity implements ISided
     private String inventoryName;
     private int timeUntilNextGen;
     
-    private static final int[] slots_top = new int[] {0};
-    private static final int[] slots_bottom = new int[] {0};
-    private static final int[] slots_sides = new int[] {0};
     
     private ItemStack[] cobbleItemStacks = new ItemStack[1];
     
@@ -91,7 +88,7 @@ public class TileEntityCobblestoneGenerator extends TileEntity implements ISided
     @Override
     public String getInvName()
     {
-        return this.isInvNameLocalized() ? this.inventoryName : "container.hopper";
+        return this.isInvNameLocalized() ? this.inventoryName : "container.CobblestoneGenerator";
     }
 
     @Override
@@ -133,13 +130,13 @@ public class TileEntityCobblestoneGenerator extends TileEntity implements ISided
     @Override
     public int[] getAccessibleSlotsFromSide(int par1)
     {
-        return par1 == 0 ? slots_bottom : (par1 == 1 ? slots_top : slots_sides);
+        return new int[]{0};
     }
 
     @Override
     public boolean canInsertItem(int par1, ItemStack par2ItemStack, int par3)
     {
-        return this.isItemValidForSlot(par1, par2ItemStack);
+        return false;
     }
 
     @Override
